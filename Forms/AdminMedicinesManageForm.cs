@@ -36,5 +36,10 @@ namespace SmartMedPharmacy.Forms
         {
 
         }
+
+        private void dgvMedicines_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
