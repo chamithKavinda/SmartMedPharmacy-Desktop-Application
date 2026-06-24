@@ -1,5 +1,12 @@
+H:\SmartMedPharmacy\SmartMedPharmacy\bin\Debug\SmartMedPharmacy.exe.config
+H:\SmartMedPharmacy\SmartMedPharmacy\bin\Debug\SmartMedPharmacy.exe
+H:\SmartMedPharmacy\SmartMedPharmacy\bin\Debug\SmartMedPharmacy.pdb
 H:\SmartMedPharmacy\SmartMedPharmacy\obj\Debug\SmartMedPharmacy.csproj.AssemblyReference.cache
+H:\SmartMedPharmacy\SmartMedPharmacy\obj\Debug\SmartMedPharmacy.Forms.AdminDashboard.resources
 H:\SmartMedPharmacy\SmartMedPharmacy\obj\Debug\SmartMedPharmacy.Forms.LoginForm.resources
+H:\SmartMedPharmacy\SmartMedPharmacy\obj\Debug\SmartMedPharmacy.Forms.RegisterForm.resources
 H:\SmartMedPharmacy\SmartMedPharmacy\obj\Debug\SmartMedPharmacy.Properties.Resources.resources
 H:\SmartMedPharmacy\SmartMedPharmacy\obj\Debug\SmartMedPharmacy.csproj.GenerateResource.cache
 H:\SmartMedPharmacy\SmartMedPharmacy\obj\Debug\SmartMedPharmacy.csproj.CoreCompileInputs.cache
+H:\SmartMedPharmacy\SmartMedPharmacy\obj\Debug\SmartMedPharmacy.exe
+H:\SmartMedPharmacy\SmartMedPharmacy\obj\Debug\SmartMedPharmacy.pdb
