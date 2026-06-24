@@ -1,0 +1,5 @@
+H:\SmartMedPharmacy\SmartMedPharmacy\obj\Debug\SmartMedPharmacy.csproj.AssemblyReference.cache
+H:\SmartMedPharmacy\SmartMedPharmacy\obj\Debug\SmartMedPharmacy.Forms.LoginForm.resources
+H:\SmartMedPharmacy\SmartMedPharmacy\obj\Debug\SmartMedPharmacy.Properties.Resources.resources
+H:\SmartMedPharmacy\SmartMedPharmacy\obj\Debug\SmartMedPharmacy.csproj.GenerateResource.cache
+H:\SmartMedPharmacy\SmartMedPharmacy\obj\Debug\SmartMedPharmacy.csproj.CoreCompileInputs.cache
