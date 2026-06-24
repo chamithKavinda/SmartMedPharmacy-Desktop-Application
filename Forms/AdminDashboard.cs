@@ -56,5 +56,10 @@ namespace SmartMedPharmacy.Forms
         {
 
         }
+
+        private void AdminMainPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
