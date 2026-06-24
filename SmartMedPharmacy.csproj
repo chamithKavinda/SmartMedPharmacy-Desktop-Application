@@ -79,6 +79,12 @@
     <Compile Include="Forms\AdminMedicinesManageForm.Designer.cs">
       <DependentUpon>AdminMedicinesManageForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\AdminReportsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AdminReportsForm.Designer.cs">
+      <DependentUpon>AdminReportsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -116,6 +122,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\AdminMedicinesManageForm.resx">
       <DependentUpon>AdminMedicinesManageForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AdminReportsForm.resx">
+      <DependentUpon>AdminReportsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
