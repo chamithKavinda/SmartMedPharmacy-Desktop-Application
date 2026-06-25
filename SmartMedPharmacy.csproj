@@ -103,6 +103,12 @@
   <ItemGroup>
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Data\UserRepository.cs" />
+    <Compile Include="Forms\Admin\AdminDashboardStatsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Admin\AdminDashboardStatsForm.Designer.cs">
+      <DependentUpon>AdminDashboardStatsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Customer\CustomerTrackOrderForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -120,12 +126,6 @@
     </Compile>
     <Compile Include="Forms\Admin\AdminDashboard.Designer.cs">
       <DependentUpon>AdminDashboard.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Admin\AdminDashboardStatsForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Admin\AdminDashboardStatsForm.Designer.cs">
-      <DependentUpon>AdminDashboardStatsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Admin\AdminManageOrdersForm.cs">
       <SubType>Form</SubType>
@@ -194,6 +194,9 @@
     <Compile Include="Models\User.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\Admin\AdminDashboardStatsForm.resx">
+      <DependentUpon>AdminDashboardStatsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Customer\CustomerTrackOrderForm.resx">
       <DependentUpon>CustomerTrackOrderForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -202,9 +205,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Admin\AdminDashboard.resx">
       <DependentUpon>AdminDashboard.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Admin\AdminDashboardStatsForm.resx">
-      <DependentUpon>AdminDashboardStatsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Admin\AdminManageOrdersForm.resx">
       <DependentUpon>AdminManageOrdersForm.cs</DependentUpon>

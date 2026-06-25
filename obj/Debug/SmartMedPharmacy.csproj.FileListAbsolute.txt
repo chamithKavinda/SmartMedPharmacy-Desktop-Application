@@ -11,7 +11,6 @@ H:\SmartMedPharmacy\SmartMedPharmacy\obj\Debug\SmartMedPharmacy.csproj.CoreCompi
 H:\SmartMedPharmacy\SmartMedPharmacy\obj\Debug\SmartMedPharmacy.exe
 H:\SmartMedPharmacy\SmartMedPharmacy\obj\Debug\SmartMedPharmacy.pdb
 H:\SmartMedPharmacy\SmartMedPharmacy\obj\Debug\SmartMedPharmacy.Forms.AdminCustomerManageForm.resources
-H:\SmartMedPharmacy\SmartMedPharmacy\obj\Debug\SmartMedPharmacy.Forms.AdminDashboardStatsForm.resources
 H:\SmartMedPharmacy\SmartMedPharmacy\obj\Debug\SmartMedPharmacy.Forms.AdminManageOrdersForm.resources
 H:\SmartMedPharmacy\SmartMedPharmacy\obj\Debug\SmartMedPharmacy.Forms.AdminMedicinesManageForm.resources
 H:\SmartMedPharmacy\SmartMedPharmacy\obj\Debug\SmartMedPharmacy.Forms.AdminReportsForm.resources
@@ -55,3 +54,4 @@ H:\SmartMedPharmacy\SmartMedPharmacy\obj\Debug\SmartMedPharmacy.Forms.Customer.C
 H:\SmartMedPharmacy\SmartMedPharmacy\obj\Debug\SmartMedPharmacy.Forms.Customer.CustomerPlaceOrderForm.resources
 H:\SmartMedPharmacy\SmartMedPharmacy\obj\Debug\SmartMedPharmacy.Forms.Customer.CustomerProfileForm.resources
 H:\SmartMedPharmacy\SmartMedPharmacy\obj\Debug\SmartMed.81EFC11B.Up2Date
+H:\SmartMedPharmacy\SmartMedPharmacy\obj\Debug\SmartMedPharmacy.Forms.Admin.AdminDashboardStatsForm.resources

@@ -12,3 +12,5 @@ create table Users(
 
 INSERT INTO Users (MobileNumber, Email, Address, Password, Role)
 VALUES ('0762106833', 'admin@gmail.com', 'Colombo', 'admin@123', 'Admin');
+
+

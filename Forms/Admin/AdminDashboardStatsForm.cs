@@ -8,23 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SmartMedPharmacy.Forms
+namespace SmartMedPharmacy.Forms.Admin
 {
     public partial class AdminDashboardStatsForm : Form
     {
         public AdminDashboardStatsForm()
         {
             InitializeComponent();
-        }
-
-        private void chart1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
