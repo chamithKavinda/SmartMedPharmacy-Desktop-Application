@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System">
       <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
     </Reference>
@@ -49,10 +52,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CustomerTrackOrderForm.cs">
+    <Compile Include="Forms\Customer\CustomerTrackOrderForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CustomerTrackOrderForm.Designer.cs">
+    <Compile Include="Forms\Customer\CustomerTrackOrderForm.Designer.cs">
       <DependentUpon>CustomerTrackOrderForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Admin\AdminCustomerManageForm.cs">
@@ -138,7 +141,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="CustomerTrackOrderForm.resx">
+    <EmbeddedResource Include="Forms\Customer\CustomerTrackOrderForm.resx">
       <DependentUpon>CustomerTrackOrderForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Admin\AdminCustomerManageForm.resx">
@@ -186,6 +189,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -200,9 +204,13 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Controllers\" />
     <Folder Include="Data\" />
     <Folder Include="Models\" />
     <Folder Include="Utill\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Quary.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

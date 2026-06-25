@@ -32,7 +32,7 @@ namespace SmartMedPharmacy.Forms
 
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void txtMobileNumber_TextChanged(object sender, EventArgs e)
         {
 
         }
@@ -47,12 +47,22 @@ namespace SmartMedPharmacy.Forms
 
         }
 
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        private void checkBoxRole_CheckedChanged(object sender, EventArgs e)
         {
 
         }
 
         private void label5_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtPassword_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnLogin_Click(object sender, EventArgs e)
         {
 
         }

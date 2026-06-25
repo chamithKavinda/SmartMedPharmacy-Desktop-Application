@@ -83,7 +83,7 @@
             this.txtMobileNumber.Name = "txtMobileNumber";
             this.txtMobileNumber.Size = new System.Drawing.Size(235, 20);
             this.txtMobileNumber.TabIndex = 4;
-            this.txtMobileNumber.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.txtMobileNumber.TextChanged += new System.EventHandler(this.txtMobileNumber_TextChanged);
             // 
             // txtPassword
             // 
@@ -92,6 +92,7 @@
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(235, 20);
             this.txtPassword.TabIndex = 6;
+            this.txtPassword.TextChanged += new System.EventHandler(this.txtPassword_TextChanged);
             // 
             // labelPassword
             // 
@@ -115,7 +116,7 @@
             this.checkBoxRole.TabIndex = 9;
             this.checkBoxRole.Text = "Logging As an Admin";
             this.checkBoxRole.UseVisualStyleBackColor = false;
-            this.checkBoxRole.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            this.checkBoxRole.CheckedChanged += new System.EventHandler(this.checkBoxRole_CheckedChanged);
             // 
             // btnLogin
             // 
@@ -128,6 +129,7 @@
             this.btnLogin.TabIndex = 10;
             this.btnLogin.Text = "LOGIN";
             this.btnLogin.UseVisualStyleBackColor = false;
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // labelRegister
             // 
