@@ -39,12 +39,8 @@
             this.btnAdminDashboard = new System.Windows.Forms.Button();
             this.AdminPanelHeader = new System.Windows.Forms.Panel();
             this.AdminMainPanel = new System.Windows.Forms.Panel();
-            this.lblTime = new System.Windows.Forms.Label();
-            this.lblDate = new System.Windows.Forms.Label();
-            this.lblWelcomeTitle = new System.Windows.Forms.Label();
             this.AdminPannelSidebar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.AdminMainPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // AdminPannelSidebar
@@ -174,45 +170,12 @@
             // 
             // AdminMainPanel
             // 
-            this.AdminMainPanel.Controls.Add(this.lblTime);
-            this.AdminMainPanel.Controls.Add(this.lblDate);
-            this.AdminMainPanel.Controls.Add(this.lblWelcomeTitle);
             this.AdminMainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.AdminMainPanel.Location = new System.Drawing.Point(169, 30);
             this.AdminMainPanel.Name = "AdminMainPanel";
             this.AdminMainPanel.Size = new System.Drawing.Size(631, 420);
             this.AdminMainPanel.TabIndex = 3;
             this.AdminMainPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.AdminMainPanel_Paint);
-            // 
-            // lblTime
-            // 
-            this.lblTime.AutoSize = true;
-            this.lblTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTime.Location = new System.Drawing.Point(561, 187);
-            this.lblTime.Name = "lblTime";
-            this.lblTime.Size = new System.Drawing.Size(43, 17);
-            this.lblTime.TabIndex = 6;
-            this.lblTime.Text = "Time";
-            // 
-            // lblDate
-            // 
-            this.lblDate.AutoSize = true;
-            this.lblDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDate.Location = new System.Drawing.Point(561, 217);
-            this.lblDate.Name = "lblDate";
-            this.lblDate.Size = new System.Drawing.Size(42, 17);
-            this.lblDate.TabIndex = 5;
-            this.lblDate.Text = "Date";
-            // 
-            // lblWelcomeTitle
-            // 
-            this.lblWelcomeTitle.AutoSize = true;
-            this.lblWelcomeTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblWelcomeTitle.Location = new System.Drawing.Point(26, 187);
-            this.lblWelcomeTitle.Name = "lblWelcomeTitle";
-            this.lblWelcomeTitle.Size = new System.Drawing.Size(142, 17);
-            this.lblWelcomeTitle.TabIndex = 4;
-            this.lblWelcomeTitle.Text = "Welcome Message";
             // 
             // AdminDashboard
             // 
@@ -226,8 +189,6 @@
             this.Text = "AdminDashboard";
             this.AdminPannelSidebar.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.AdminMainPanel.ResumeLayout(false);
-            this.AdminMainPanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -243,8 +204,5 @@
         private System.Windows.Forms.Button btnLogout;
         private System.Windows.Forms.Button btnReports;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label lblTime;
-        private System.Windows.Forms.Label lblDate;
-        private System.Windows.Forms.Label lblWelcomeTitle;
     }
 }
