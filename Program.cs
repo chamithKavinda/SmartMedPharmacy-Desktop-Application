@@ -16,7 +16,7 @@ namespace SmartMedPharmacy
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new SmartMedPharmacy.Forms.RegisterForm());
+            Application.Run(new SmartMedPharmacy.Forms.LoginForm());
         }
     }
 }
