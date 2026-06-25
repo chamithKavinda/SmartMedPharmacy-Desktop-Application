@@ -10,3 +10,9 @@ H:\SmartMedPharmacy\SmartMedPharmacy\obj\Debug\SmartMedPharmacy.csproj.GenerateR
 H:\SmartMedPharmacy\SmartMedPharmacy\obj\Debug\SmartMedPharmacy.csproj.CoreCompileInputs.cache
 H:\SmartMedPharmacy\SmartMedPharmacy\obj\Debug\SmartMedPharmacy.exe
 H:\SmartMedPharmacy\SmartMedPharmacy\obj\Debug\SmartMedPharmacy.pdb
+H:\SmartMedPharmacy\SmartMedPharmacy\obj\Debug\SmartMedPharmacy.Forms.AdminCustomerManageForm.resources
+H:\SmartMedPharmacy\SmartMedPharmacy\obj\Debug\SmartMedPharmacy.Forms.AdminDashboardStatsForm.resources
+H:\SmartMedPharmacy\SmartMedPharmacy\obj\Debug\SmartMedPharmacy.Forms.AdminManageOrdersForm.resources
+H:\SmartMedPharmacy\SmartMedPharmacy\obj\Debug\SmartMedPharmacy.Forms.AdminMedicinesManageForm.resources
+H:\SmartMedPharmacy\SmartMedPharmacy\obj\Debug\SmartMedPharmacy.Forms.AdminReportsForm.resources
+H:\SmartMedPharmacy\SmartMedPharmacy\obj\Debug\SmartMedPharmacy.Forms.Customer.CustomerDashboard.resources

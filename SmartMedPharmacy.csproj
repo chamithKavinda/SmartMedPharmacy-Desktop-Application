@@ -49,41 +49,47 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Forms\AdminCustomerManageForm.cs">
+    <Compile Include="Forms\Admin\AdminCustomerManageForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\AdminCustomerManageForm.Designer.cs">
+    <Compile Include="Forms\Admin\AdminCustomerManageForm.Designer.cs">
       <DependentUpon>AdminCustomerManageForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\AdminDashboard.cs">
+    <Compile Include="Forms\Admin\AdminDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\AdminDashboard.Designer.cs">
+    <Compile Include="Forms\Admin\AdminDashboard.Designer.cs">
       <DependentUpon>AdminDashboard.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\AdminDashboardStatsForm.cs">
+    <Compile Include="Forms\Admin\AdminDashboardStatsForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\AdminDashboardStatsForm.Designer.cs">
+    <Compile Include="Forms\Admin\AdminDashboardStatsForm.Designer.cs">
       <DependentUpon>AdminDashboardStatsForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\AdminManageOrdersForm.cs">
+    <Compile Include="Forms\Admin\AdminManageOrdersForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\AdminManageOrdersForm.Designer.cs">
+    <Compile Include="Forms\Admin\AdminManageOrdersForm.Designer.cs">
       <DependentUpon>AdminManageOrdersForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\AdminMedicinesManageForm.cs">
+    <Compile Include="Forms\Admin\AdminMedicinesManageForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\AdminMedicinesManageForm.Designer.cs">
+    <Compile Include="Forms\Admin\AdminMedicinesManageForm.Designer.cs">
       <DependentUpon>AdminMedicinesManageForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\AdminReportsForm.cs">
+    <Compile Include="Forms\Admin\AdminReportsForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\AdminReportsForm.Designer.cs">
+    <Compile Include="Forms\Admin\AdminReportsForm.Designer.cs">
       <DependentUpon>AdminReportsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Customer\CustomerDashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Customer\CustomerDashboard.Designer.cs">
+      <DependentUpon>CustomerDashboard.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\LoginForm.cs">
       <SubType>Form</SubType>
@@ -108,23 +114,26 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Forms\AdminCustomerManageForm.resx">
+    <EmbeddedResource Include="Forms\Admin\AdminCustomerManageForm.resx">
       <DependentUpon>AdminCustomerManageForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\AdminDashboard.resx">
+    <EmbeddedResource Include="Forms\Admin\AdminDashboard.resx">
       <DependentUpon>AdminDashboard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\AdminDashboardStatsForm.resx">
+    <EmbeddedResource Include="Forms\Admin\AdminDashboardStatsForm.resx">
       <DependentUpon>AdminDashboardStatsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\AdminManageOrdersForm.resx">
+    <EmbeddedResource Include="Forms\Admin\AdminManageOrdersForm.resx">
       <DependentUpon>AdminManageOrdersForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\AdminMedicinesManageForm.resx">
+    <EmbeddedResource Include="Forms\Admin\AdminMedicinesManageForm.resx">
       <DependentUpon>AdminMedicinesManageForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\AdminReportsForm.resx">
+    <EmbeddedResource Include="Forms\Admin\AdminReportsForm.resx">
       <DependentUpon>AdminReportsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Customer\CustomerDashboard.resx">
+      <DependentUpon>CustomerDashboard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
