@@ -10,7 +10,22 @@ create table Users(
 	Role varchar(20) not null
 );
 
-INSERT INTO Users (MobileNumber, Email, Address, Password, Role)
-VALUES ('0762106833', 'admin@gmail.com', 'Colombo', 'admin@123', 'Admin');
+insert into Users (MobileNumber, Email, Address, Password, Role)
+values ('0762106833', 'admin@gmail.com', 'Colombo', 'admin@123', 'Admin');
+
+Customer PW - Cc@123456
+
+create table Medicines (
+    MedicineId int AUTO_INCREMENT PRIMARY KEY,
+    Name varchar(100) NOT NULL,
+    Stock int NOT NULL,
+    Category varchar(50) NOT NULL,
+    Supplier varchar(100) NOT NULL,
+    Price decimal(10,2) NOT NULL,
+    Dosage varchar(50) NOT NULL,
+    ExpiryDate date NOT NULL
+);
+
+
 
 
