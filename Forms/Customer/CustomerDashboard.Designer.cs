@@ -30,13 +30,13 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CustomerDashboard));
             this.CustomerDashboardSideBar = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnDashboard = new System.Windows.Forms.Button();
-            this.btnMedicines = new System.Windows.Forms.Button();
-            this.btnPlaceOrders = new System.Windows.Forms.Button();
-            this.btnTrackOrders = new System.Windows.Forms.Button();
-            this.btnSettings = new System.Windows.Forms.Button();
             this.btnLogout = new System.Windows.Forms.Button();
+            this.btnSettings = new System.Windows.Forms.Button();
+            this.btnTrackOrders = new System.Windows.Forms.Button();
+            this.btnPlaceOrders = new System.Windows.Forms.Button();
+            this.btnMedicines = new System.Windows.Forms.Button();
+            this.btnDashboard = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelCustomerFormsLoadForm = new System.Windows.Forms.Panel();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.lblQuickView = new System.Windows.Forms.Label();
@@ -71,58 +71,33 @@
             this.CustomerDashboardSideBar.TabIndex = 0;
             this.CustomerDashboardSideBar.Paint += new System.Windows.Forms.PaintEventHandler(this.CustomerDashboardSideBar_Paint);
             // 
-            // pictureBox1
+            // btnLogout
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(33, 35);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 50);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.btnLogout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.btnLogout.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnLogout.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnLogout.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogout.ForeColor = System.Drawing.Color.Transparent;
+            this.btnLogout.Location = new System.Drawing.Point(20, 352);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(126, 35);
+            this.btnLogout.TabIndex = 6;
+            this.btnLogout.Text = "Logout";
+            this.btnLogout.UseVisualStyleBackColor = false;
             // 
-            // btnDashboard
+            // btnSettings
             // 
-            this.btnDashboard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.btnDashboard.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnDashboard.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnDashboard.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDashboard.ForeColor = System.Drawing.Color.Transparent;
-            this.btnDashboard.Location = new System.Drawing.Point(20, 115);
-            this.btnDashboard.Name = "btnDashboard";
-            this.btnDashboard.Size = new System.Drawing.Size(126, 35);
-            this.btnDashboard.TabIndex = 1;
-            this.btnDashboard.Text = "Dashboard";
-            this.btnDashboard.UseVisualStyleBackColor = false;
-            // 
-            // btnMedicines
-            // 
-            this.btnMedicines.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.btnMedicines.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnMedicines.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnMedicines.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMedicines.ForeColor = System.Drawing.Color.Transparent;
-            this.btnMedicines.Location = new System.Drawing.Point(20, 164);
-            this.btnMedicines.Name = "btnMedicines";
-            this.btnMedicines.Size = new System.Drawing.Size(126, 35);
-            this.btnMedicines.TabIndex = 2;
-            this.btnMedicines.Text = "Medicines";
-            this.btnMedicines.UseVisualStyleBackColor = false;
-            // 
-            // btnPlaceOrders
-            // 
-            this.btnPlaceOrders.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.btnPlaceOrders.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnPlaceOrders.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnPlaceOrders.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPlaceOrders.ForeColor = System.Drawing.Color.Transparent;
-            this.btnPlaceOrders.Location = new System.Drawing.Point(20, 210);
-            this.btnPlaceOrders.Name = "btnPlaceOrders";
-            this.btnPlaceOrders.Size = new System.Drawing.Size(126, 35);
-            this.btnPlaceOrders.TabIndex = 3;
-            this.btnPlaceOrders.Text = "Place Orders";
-            this.btnPlaceOrders.UseVisualStyleBackColor = false;
+            this.btnSettings.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.btnSettings.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnSettings.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnSettings.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSettings.ForeColor = System.Drawing.Color.Transparent;
+            this.btnSettings.Location = new System.Drawing.Point(20, 305);
+            this.btnSettings.Name = "btnSettings";
+            this.btnSettings.Size = new System.Drawing.Size(126, 35);
+            this.btnSettings.TabIndex = 5;
+            this.btnSettings.Text = "Profile";
+            this.btnSettings.UseVisualStyleBackColor = false;
             // 
             // btnTrackOrders
             // 
@@ -138,33 +113,58 @@
             this.btnTrackOrders.Text = "Track Orders";
             this.btnTrackOrders.UseVisualStyleBackColor = false;
             // 
-            // btnSettings
+            // btnPlaceOrders
             // 
-            this.btnSettings.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.btnSettings.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnSettings.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnSettings.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSettings.ForeColor = System.Drawing.Color.Transparent;
-            this.btnSettings.Location = new System.Drawing.Point(20, 305);
-            this.btnSettings.Name = "btnSettings";
-            this.btnSettings.Size = new System.Drawing.Size(126, 35);
-            this.btnSettings.TabIndex = 5;
-            this.btnSettings.Text = "Settings";
-            this.btnSettings.UseVisualStyleBackColor = false;
+            this.btnPlaceOrders.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.btnPlaceOrders.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnPlaceOrders.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnPlaceOrders.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPlaceOrders.ForeColor = System.Drawing.Color.Transparent;
+            this.btnPlaceOrders.Location = new System.Drawing.Point(20, 210);
+            this.btnPlaceOrders.Name = "btnPlaceOrders";
+            this.btnPlaceOrders.Size = new System.Drawing.Size(126, 35);
+            this.btnPlaceOrders.TabIndex = 3;
+            this.btnPlaceOrders.Text = "Place Orders";
+            this.btnPlaceOrders.UseVisualStyleBackColor = false;
             // 
-            // btnLogout
+            // btnMedicines
             // 
-            this.btnLogout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.btnLogout.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnLogout.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnLogout.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogout.ForeColor = System.Drawing.Color.Transparent;
-            this.btnLogout.Location = new System.Drawing.Point(20, 352);
-            this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(126, 35);
-            this.btnLogout.TabIndex = 6;
-            this.btnLogout.Text = "Logout";
-            this.btnLogout.UseVisualStyleBackColor = false;
+            this.btnMedicines.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.btnMedicines.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnMedicines.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnMedicines.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMedicines.ForeColor = System.Drawing.Color.Transparent;
+            this.btnMedicines.Location = new System.Drawing.Point(20, 164);
+            this.btnMedicines.Name = "btnMedicines";
+            this.btnMedicines.Size = new System.Drawing.Size(126, 35);
+            this.btnMedicines.TabIndex = 2;
+            this.btnMedicines.Text = "Medicines";
+            this.btnMedicines.UseVisualStyleBackColor = false;
+            // 
+            // btnDashboard
+            // 
+            this.btnDashboard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.btnDashboard.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnDashboard.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnDashboard.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDashboard.ForeColor = System.Drawing.Color.Transparent;
+            this.btnDashboard.Location = new System.Drawing.Point(20, 115);
+            this.btnDashboard.Name = "btnDashboard";
+            this.btnDashboard.Size = new System.Drawing.Size(126, 35);
+            this.btnDashboard.TabIndex = 1;
+            this.btnDashboard.Text = "Dashboard";
+            this.btnDashboard.UseVisualStyleBackColor = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(33, 35);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(100, 50);
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // panelCustomerFormsLoadForm
             // 
