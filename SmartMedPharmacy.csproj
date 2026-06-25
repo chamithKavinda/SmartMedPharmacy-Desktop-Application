@@ -49,6 +49,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CustomerTrackOrderForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomerTrackOrderForm.Designer.cs">
+      <DependentUpon>CustomerTrackOrderForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Admin\AdminCustomerManageForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -126,6 +132,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="CustomerTrackOrderForm.resx">
+      <DependentUpon>CustomerTrackOrderForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Admin\AdminCustomerManageForm.resx">
       <DependentUpon>AdminCustomerManageForm.cs</DependentUpon>
     </EmbeddedResource>

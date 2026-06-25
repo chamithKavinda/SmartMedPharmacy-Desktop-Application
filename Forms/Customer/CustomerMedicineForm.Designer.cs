@@ -51,9 +51,9 @@
             this.lblMedicineTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMedicineTitle.Location = new System.Drawing.Point(25, 21);
             this.lblMedicineTitle.Name = "lblMedicineTitle";
-            this.lblMedicineTitle.Size = new System.Drawing.Size(84, 18);
+            this.lblMedicineTitle.Size = new System.Drawing.Size(161, 18);
             this.lblMedicineTitle.TabIndex = 0;
-            this.lblMedicineTitle.Text = "Medicines";
+            this.lblMedicineTitle.Text = "Find Your Medicines";
             // 
             // lblName
             // 
