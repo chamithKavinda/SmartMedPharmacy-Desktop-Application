@@ -101,6 +101,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\MedicineController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Data\MedicineRepository.cs" />
     <Compile Include="Data\UserRepository.cs" />
