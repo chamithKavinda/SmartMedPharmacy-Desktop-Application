@@ -55,3 +55,4 @@ H:\SmartMedPharmacy\SmartMedPharmacy\obj\Debug\SmartMedPharmacy.Forms.Customer.C
 H:\SmartMedPharmacy\SmartMedPharmacy\obj\Debug\SmartMedPharmacy.Forms.Customer.CustomerProfileForm.resources
 H:\SmartMedPharmacy\SmartMedPharmacy\obj\Debug\SmartMed.81EFC11B.Up2Date
 H:\SmartMedPharmacy\SmartMedPharmacy\obj\Debug\SmartMedPharmacy.Forms.Admin.AdminDashboardStatsForm.resources
+H:\SmartMedPharmacy\SmartMedPharmacy\obj\Debug\SmartMedPharmacy.Forms.Customer.CustomerDashboardStatsForm.resources

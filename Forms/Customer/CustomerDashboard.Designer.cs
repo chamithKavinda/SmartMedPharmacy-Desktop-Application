@@ -38,19 +38,12 @@
             this.btnDashboard = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelCustomerFormsLoadForm = new System.Windows.Forms.Panel();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.lblQuickView = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.lblOrderHistory = new System.Windows.Forms.Label();
             this.lblTime = new System.Windows.Forms.Label();
             this.lblDate = new System.Windows.Forms.Label();
             this.lblWelcomeTitle = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.CustomerDashboardSideBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panelCustomerFormsLoadForm.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -67,7 +60,7 @@
             this.CustomerDashboardSideBar.Dock = System.Windows.Forms.DockStyle.Left;
             this.CustomerDashboardSideBar.Location = new System.Drawing.Point(0, 0);
             this.CustomerDashboardSideBar.Name = "CustomerDashboardSideBar";
-            this.CustomerDashboardSideBar.Size = new System.Drawing.Size(166, 450);
+            this.CustomerDashboardSideBar.Size = new System.Drawing.Size(166, 499);
             this.CustomerDashboardSideBar.TabIndex = 0;
             this.CustomerDashboardSideBar.Paint += new System.Windows.Forms.PaintEventHandler(this.CustomerDashboardSideBar_Paint);
             // 
@@ -84,6 +77,7 @@
             this.btnLogout.TabIndex = 6;
             this.btnLogout.Text = "Logout";
             this.btnLogout.UseVisualStyleBackColor = false;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // btnSettings
             // 
@@ -98,6 +92,7 @@
             this.btnSettings.TabIndex = 5;
             this.btnSettings.Text = "Profile";
             this.btnSettings.UseVisualStyleBackColor = false;
+            this.btnSettings.Click += new System.EventHandler(this.btnSettings_Click);
             // 
             // btnTrackOrders
             // 
@@ -112,6 +107,7 @@
             this.btnTrackOrders.TabIndex = 4;
             this.btnTrackOrders.Text = "Track Orders";
             this.btnTrackOrders.UseVisualStyleBackColor = false;
+            this.btnTrackOrders.Click += new System.EventHandler(this.btnTrackOrders_Click);
             // 
             // btnPlaceOrders
             // 
@@ -126,6 +122,7 @@
             this.btnPlaceOrders.TabIndex = 3;
             this.btnPlaceOrders.Text = "Place Orders";
             this.btnPlaceOrders.UseVisualStyleBackColor = false;
+            this.btnPlaceOrders.Click += new System.EventHandler(this.btnPlaceOrders_Click);
             // 
             // btnMedicines
             // 
@@ -140,6 +137,7 @@
             this.btnMedicines.TabIndex = 2;
             this.btnMedicines.Text = "Medicines";
             this.btnMedicines.UseVisualStyleBackColor = false;
+            this.btnMedicines.Click += new System.EventHandler(this.btnMedicines_Click);
             // 
             // btnDashboard
             // 
@@ -154,6 +152,7 @@
             this.btnDashboard.TabIndex = 1;
             this.btnDashboard.Text = "Dashboard";
             this.btnDashboard.UseVisualStyleBackColor = false;
+            this.btnDashboard.Click += new System.EventHandler(this.btnDashboard_Click);
             // 
             // pictureBox1
             // 
@@ -168,50 +167,11 @@
             // 
             // panelCustomerFormsLoadForm
             // 
-            this.panelCustomerFormsLoadForm.Controls.Add(this.dataGridView2);
-            this.panelCustomerFormsLoadForm.Controls.Add(this.lblQuickView);
-            this.panelCustomerFormsLoadForm.Controls.Add(this.dataGridView1);
-            this.panelCustomerFormsLoadForm.Controls.Add(this.lblOrderHistory);
             this.panelCustomerFormsLoadForm.Location = new System.Drawing.Point(165, 35);
             this.panelCustomerFormsLoadForm.Name = "panelCustomerFormsLoadForm";
-            this.panelCustomerFormsLoadForm.Size = new System.Drawing.Size(638, 415);
+            this.panelCustomerFormsLoadForm.Size = new System.Drawing.Size(823, 461);
             this.panelCustomerFormsLoadForm.TabIndex = 8;
-            // 
-            // dataGridView2
-            // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(30, 55);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(574, 140);
-            this.dataGridView2.TabIndex = 15;
-            // 
-            // lblQuickView
-            // 
-            this.lblQuickView.AutoSize = true;
-            this.lblQuickView.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblQuickView.Location = new System.Drawing.Point(27, 30);
-            this.lblQuickView.Name = "lblQuickView";
-            this.lblQuickView.Size = new System.Drawing.Size(85, 17);
-            this.lblQuickView.TabIndex = 14;
-            this.lblQuickView.Text = "Quick view";
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(30, 233);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(574, 150);
-            this.dataGridView1.TabIndex = 13;
-            // 
-            // lblOrderHistory
-            // 
-            this.lblOrderHistory.AutoSize = true;
-            this.lblOrderHistory.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblOrderHistory.Location = new System.Drawing.Point(27, 208);
-            this.lblOrderHistory.Name = "lblOrderHistory";
-            this.lblOrderHistory.Size = new System.Drawing.Size(106, 17);
-            this.lblOrderHistory.TabIndex = 12;
-            this.lblOrderHistory.Text = "Order History";
+            this.panelCustomerFormsLoadForm.Paint += new System.Windows.Forms.PaintEventHandler(this.panelCustomerFormsLoadForm_Paint);
             // 
             // lblTime
             // 
@@ -233,6 +193,7 @@
             this.lblDate.Size = new System.Drawing.Size(42, 17);
             this.lblDate.TabIndex = 10;
             this.lblDate.Text = "Date";
+            this.lblDate.Click += new System.EventHandler(this.lblDate_Click_1);
             // 
             // lblWelcomeTitle
             // 
@@ -253,7 +214,7 @@
             this.panel1.Controls.Add(this.lblWelcomeTitle);
             this.panel1.Location = new System.Drawing.Point(165, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(638, 45);
+            this.panel1.Size = new System.Drawing.Size(823, 45);
             this.panel1.TabIndex = 9;
             // 
             // CustomerDashboard
@@ -261,7 +222,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(988, 499);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelCustomerFormsLoadForm);
             this.Controls.Add(this.CustomerDashboardSideBar);
@@ -270,10 +231,6 @@
             this.Load += new System.EventHandler(this.CustomerDashboard_Load);
             this.CustomerDashboardSideBar.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panelCustomerFormsLoadForm.ResumeLayout(false);
-            this.panelCustomerFormsLoadForm.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -291,10 +248,6 @@
         private System.Windows.Forms.Button btnPlaceOrders;
         private System.Windows.Forms.Button btnMedicines;
         private System.Windows.Forms.Panel panelCustomerFormsLoadForm;
-        private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.Label lblQuickView;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Label lblOrderHistory;
         private System.Windows.Forms.Label lblTime;
         private System.Windows.Forms.Label lblDate;
         private System.Windows.Forms.Label lblWelcomeTitle;

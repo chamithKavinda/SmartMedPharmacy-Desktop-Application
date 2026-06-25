@@ -12,9 +12,33 @@ namespace SmartMedPharmacy.Forms.Customer
 {
     public partial class CustomerDashboard : Form
     {
+        //private string loggedUserEmail;
+        //private Timer timer = new Timer();
         public CustomerDashboard()
         {
             InitializeComponent();
+
+            //loggedUserEmail = email;
+
+            //lblWelcomeTitle.Text = "Logging as " + loggedUserEmail;
+
+            LoadForm(new CustomerDashboardStatsForm());
+
+            //StartDateTime();
+        }
+
+        private void LoadForm(Form childForm)
+        {
+            panelCustomerFormsLoadForm.Controls.Clear();
+
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+
+            panelCustomerFormsLoadForm.Controls.Add(childForm);
+            panelCustomerFormsLoadForm.Tag = childForm;
+
+            childForm.Show();
         }
 
         private void CustomerDashboardSideBar_Paint(object sender, PaintEventArgs e)
@@ -68,6 +92,48 @@ namespace SmartMedPharmacy.Forms.Customer
         }
 
         private void lblTime_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnDashboard_Click(object sender, EventArgs e)
+        {
+            LoadForm(new CustomerDashboardStatsForm());
+        }
+
+        private void btnMedicines_Click(object sender, EventArgs e)
+        {
+            LoadForm(new CustomerMedicineForm());
+        }
+
+        private void btnPlaceOrders_Click(object sender, EventArgs e)
+        {
+            LoadForm(new CustomerPlaceOrderForm());
+        }
+
+        private void btnTrackOrders_Click(object sender, EventArgs e)
+        {
+            LoadForm(new CustomerTrackOrderForm());
+        }
+
+        private void btnSettings_Click(object sender, EventArgs e)
+        {
+            LoadForm(new CustomerProfileForm());
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            LoginForm login = new LoginForm();
+            login.Show();
+            this.Close();
+        }
+
+        private void lblDate_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panelCustomerFormsLoadForm_Paint(object sender, PaintEventArgs e)
         {
 
         }
