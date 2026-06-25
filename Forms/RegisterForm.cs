@@ -32,7 +32,7 @@ namespace SmartMedPharmacy.Forms
 
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void txtMobileNumber_TextChanged(object sender, EventArgs e)
         {
 
         }
@@ -42,7 +42,7 @@ namespace SmartMedPharmacy.Forms
 
         }
 
-        private void textBox1_TextChanged_1(object sender, EventArgs e)
+        private void txtPassword_TextChanged_1(object sender, EventArgs e)
         {
 
         }
@@ -52,7 +52,22 @@ namespace SmartMedPharmacy.Forms
 
         }
 
-        private void textBox1_TextChanged_2(object sender, EventArgs e)
+        private void txtAddress_TextChanged_2(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtEmail_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnRegister_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lnkSignIn_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
 
         }

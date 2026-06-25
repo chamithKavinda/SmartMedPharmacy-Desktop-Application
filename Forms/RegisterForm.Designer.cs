@@ -62,6 +62,7 @@
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(235, 20);
             this.txtEmail.TabIndex = 6;
+            this.txtEmail.TextChanged += new System.EventHandler(this.txtEmail_TextChanged);
             // 
             // labelEmail
             // 
@@ -81,7 +82,7 @@
             this.txtMobileNumber.Name = "txtMobileNumber";
             this.txtMobileNumber.Size = new System.Drawing.Size(235, 20);
             this.txtMobileNumber.TabIndex = 8;
-            this.txtMobileNumber.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.txtMobileNumber.TextChanged += new System.EventHandler(this.txtMobileNumber_TextChanged);
             // 
             // labelMobileNumber
             // 
@@ -102,7 +103,7 @@
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(235, 20);
             this.txtPassword.TabIndex = 10;
-            this.txtPassword.TextChanged += new System.EventHandler(this.textBox1_TextChanged_1);
+            this.txtPassword.TextChanged += new System.EventHandler(this.txtPassword_TextChanged_1);
             // 
             // labelPassword
             // 
@@ -123,7 +124,7 @@
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.Size = new System.Drawing.Size(235, 20);
             this.txtAddress.TabIndex = 12;
-            this.txtAddress.TextChanged += new System.EventHandler(this.textBox1_TextChanged_2);
+            this.txtAddress.TextChanged += new System.EventHandler(this.txtAddress_TextChanged_2);
             // 
             // labelAddress
             // 
@@ -148,6 +149,7 @@
             this.btnRegister.TabIndex = 13;
             this.btnRegister.Text = "REGISTER";
             this.btnRegister.UseVisualStyleBackColor = false;
+            this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
             // 
             // lnkSignIn
             // 
@@ -159,6 +161,7 @@
             this.lnkSignIn.TabIndex = 15;
             this.lnkSignIn.TabStop = true;
             this.lnkSignIn.Text = "Sign In";
+            this.lnkSignIn.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkSignIn_LinkClicked);
             // 
             // labelSignIn
             // 
