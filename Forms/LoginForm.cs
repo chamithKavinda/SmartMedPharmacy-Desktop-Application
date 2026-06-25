@@ -66,5 +66,12 @@ namespace SmartMedPharmacy.Forms
         {
 
         }
+
+        private void lnkRegister_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            RegisterForm registerForm = new RegisterForm();
+            registerForm.Show();
+            this.Hide();
+        }
     }
 }

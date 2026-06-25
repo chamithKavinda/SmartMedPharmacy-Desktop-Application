@@ -9,7 +9,7 @@ namespace SmartMedPharmacy.Data
     public class UserRepository
     {
         private string connectionString =
-            "Server=localhost;Database=SmartMedPharmacy;Uid=root;Pwd=yourpassword;";
+            "Server=localhost;Database=SmartMedPharmacy;Uid=root;Pwd=CK13;";
 
         // ---------------- Save User ----------------
         public bool RegisterUser(User user)

@@ -153,6 +153,7 @@
             this.lnkRegister.TabIndex = 12;
             this.lnkRegister.TabStop = true;
             this.lnkRegister.Text = "Register Now";
+            this.lnkRegister.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkRegister_LinkClicked);
             // 
             // LoginForm
             // 
