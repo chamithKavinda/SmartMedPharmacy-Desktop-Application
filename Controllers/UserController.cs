@@ -118,5 +118,16 @@ namespace SmartMedPharmacy.Controller
 
             return success ? null : "Delete failed.";
         }
+
+
+        // ---------------- User Logging Credential Checking ----------------
+        public User Login(string mobileNumber, string password)
+        {
+            string hashedPassword = PasswordHasher.HashPassword(password);
+
+            User user = _userRepository.Login(mobileNumber, hashedPassword);
+
+            return user;
+        }
     }
 }

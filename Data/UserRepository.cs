@@ -161,5 +161,37 @@ namespace SmartMedPharmacy.Data
                 return count > 0;
             }
         }
+
+        // ---------------- User Loggin Credential Checking  ----------------
+        public User Login(string mobileNumber, string passwordHash)
+        {
+            string query = "SELECT * FROM Users WHERE MobileNumber = @MobileNumber AND Password = @Password";
+
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            using (MySqlCommand cmd = new MySqlCommand(query, conn))
+            {
+                cmd.Parameters.AddWithValue("@MobileNumber", mobileNumber);
+                cmd.Parameters.AddWithValue("@Password", passwordHash);
+
+                conn.Open();
+
+                using (MySqlDataReader reader = cmd.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        return new User
+                        {
+                            MobileNumber = reader["MobileNumber"].ToString(),
+                            Email = reader["Email"].ToString(),
+                            Address = reader["Address"].ToString(),
+                            Password = reader["Password"].ToString(),
+                            Role = reader["Role"].ToString()
+                        };
+                    }
+                }
+            }
+
+            return null;
+        }
     }
 }
