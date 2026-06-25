@@ -35,6 +35,9 @@ namespace SmartMedPharmacy.Forms
             );
 
             MessageBox.Show(result ?? "Medicine Saved Successfully");
+
+            if (result == null)
+                ClearForm();
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -50,6 +53,9 @@ namespace SmartMedPharmacy.Forms
             );
 
             MessageBox.Show(result ?? "Medicine Updated Successfully");
+
+            if (result == null)
+                ClearForm();
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -57,6 +63,9 @@ namespace SmartMedPharmacy.Forms
             string result = _medicineController.DeleteMedicine(txtName.Text);
 
             MessageBox.Show(result ?? "Medicine Deleted Successfully");
+
+            if (result == null)
+                ClearForm();
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
@@ -77,6 +86,18 @@ namespace SmartMedPharmacy.Forms
             {
                 MessageBox.Show("Medicine Out Of Stock");
             }
+        }
+
+        private void ClearForm()
+        {
+            txtName.Clear();
+            txtStock.Clear();
+            comboMedicineCategory.SelectedIndex = -1;
+            txtSupplier.Clear();
+            txtPrice.Clear();
+            txtDosage.Clear();
+            txtSearch.Clear();
+            dateTimePicker1.Value = DateTime.Now;
         }
 
         private void label1_Click(object sender, EventArgs e)

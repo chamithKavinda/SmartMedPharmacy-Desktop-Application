@@ -175,6 +175,17 @@
             // comboMedicineCategory
             // 
             this.comboMedicineCategory.FormattingEnabled = true;
+            this.comboMedicineCategory.Items.AddRange(new object[] {
+            "Pain Relief",
+            "Antibiotics",
+            "Antihistamines",
+            "Acid Reducers",
+            "Diabetes Medicines",
+            "Cardiovascular",
+            "Vitamins & Supplements",
+            "Cough & Cold",
+            "Skin Care / Dermatology",
+            "Nervous System / CNS Drugs"});
             this.comboMedicineCategory.Location = new System.Drawing.Point(63, 120);
             this.comboMedicineCategory.Name = "comboMedicineCategory";
             this.comboMedicineCategory.Size = new System.Drawing.Size(278, 21);
