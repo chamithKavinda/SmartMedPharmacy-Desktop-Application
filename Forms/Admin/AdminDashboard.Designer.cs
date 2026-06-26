@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminDashboard));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea15 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend15 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series15 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea16 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend16 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series16 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.AdminPannelSidebar = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnLogout = new System.Windows.Forms.Button();
@@ -74,7 +74,7 @@
             this.AdminPannelSidebar.Dock = System.Windows.Forms.DockStyle.Left;
             this.AdminPannelSidebar.Location = new System.Drawing.Point(0, 39);
             this.AdminPannelSidebar.Name = "AdminPannelSidebar";
-            this.AdminPannelSidebar.Size = new System.Drawing.Size(169, 447);
+            this.AdminPannelSidebar.Size = new System.Drawing.Size(169, 460);
             this.AdminPannelSidebar.TabIndex = 1;
             this.AdminPannelSidebar.Paint += new System.Windows.Forms.PaintEventHandler(this.AdminPannelContainer_Paint);
             // 
@@ -187,7 +187,7 @@
             this.AdminPanelHeader.Dock = System.Windows.Forms.DockStyle.Top;
             this.AdminPanelHeader.Location = new System.Drawing.Point(0, 0);
             this.AdminPanelHeader.Name = "AdminPanelHeader";
-            this.AdminPanelHeader.Size = new System.Drawing.Size(915, 39);
+            this.AdminPanelHeader.Size = new System.Drawing.Size(961, 39);
             this.AdminPanelHeader.TabIndex = 2;
             this.AdminPanelHeader.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -235,7 +235,7 @@
             this.AdminMainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.AdminMainPanel.Location = new System.Drawing.Point(169, 39);
             this.AdminMainPanel.Name = "AdminMainPanel";
-            this.AdminMainPanel.Size = new System.Drawing.Size(746, 447);
+            this.AdminMainPanel.Size = new System.Drawing.Size(792, 460);
             this.AdminMainPanel.TabIndex = 3;
             this.AdminMainPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.AdminMainPanel_Paint);
             // 
@@ -274,33 +274,33 @@
             // 
             // chart2
             // 
-            chartArea15.Name = "ChartArea1";
-            this.chart2.ChartAreas.Add(chartArea15);
-            legend15.Name = "Legend1";
-            this.chart2.Legends.Add(legend15);
+            chartArea1.Name = "ChartArea1";
+            this.chart2.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chart2.Legends.Add(legend1);
             this.chart2.Location = new System.Drawing.Point(404, 104);
             this.chart2.Name = "chart2";
             this.chart2.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SeaGreen;
-            series15.ChartArea = "ChartArea1";
-            series15.Legend = "Legend1";
-            series15.Name = "Series1";
-            this.chart2.Series.Add(series15);
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chart2.Series.Add(series1);
             this.chart2.Size = new System.Drawing.Size(300, 300);
             this.chart2.TabIndex = 6;
             this.chart2.Text = "chart2";
             // 
             // chart1
             // 
-            chartArea16.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea16);
-            legend16.Name = "Legend1";
-            this.chart1.Legends.Add(legend16);
+            chartArea2.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chart1.Legends.Add(legend2);
             this.chart1.Location = new System.Drawing.Point(42, 104);
             this.chart1.Name = "chart1";
-            series16.ChartArea = "ChartArea1";
-            series16.Legend = "Legend1";
-            series16.Name = "Series1";
-            this.chart1.Series.Add(series16);
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.chart1.Series.Add(series2);
             this.chart1.Size = new System.Drawing.Size(300, 300);
             this.chart1.TabIndex = 5;
             this.chart1.Text = "chart1";
@@ -309,7 +309,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(915, 486);
+            this.ClientSize = new System.Drawing.Size(961, 499);
             this.Controls.Add(this.AdminMainPanel);
             this.Controls.Add(this.AdminPannelSidebar);
             this.Controls.Add(this.AdminPanelHeader);

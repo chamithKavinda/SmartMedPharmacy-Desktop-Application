@@ -44,7 +44,11 @@
             this.dgvCustomers = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnRefresh = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.radioBtnCustomer = new System.Windows.Forms.RadioButton();
+            this.radioBtnAdmin = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCustomers)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtEmail
@@ -53,6 +57,7 @@
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(278, 20);
             this.txtEmail.TabIndex = 4;
+            this.txtEmail.TextChanged += new System.EventHandler(this.txtEmail_TextChanged);
             // 
             // labelEmail
             // 
@@ -70,6 +75,7 @@
             this.txtMobileNumber.Name = "txtMobileNumber";
             this.txtMobileNumber.Size = new System.Drawing.Size(278, 20);
             this.txtMobileNumber.TabIndex = 6;
+            this.txtMobileNumber.TextChanged += new System.EventHandler(this.txtMobileNumber_TextChanged);
             // 
             // labelMobileNumber
             // 
@@ -87,6 +93,7 @@
             this.textAddress.Name = "textAddress";
             this.textAddress.Size = new System.Drawing.Size(278, 20);
             this.textAddress.TabIndex = 8;
+            this.textAddress.TextChanged += new System.EventHandler(this.textAddress_TextChanged);
             // 
             // labelAddress
             // 
@@ -105,6 +112,7 @@
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(278, 20);
             this.txtPassword.TabIndex = 10;
+            this.txtPassword.TextChanged += new System.EventHandler(this.txtPassword_TextChanged);
             // 
             // labelPassword
             // 
@@ -126,6 +134,7 @@
             this.btnSearch.TabIndex = 26;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // txtSearch
             // 
@@ -133,6 +142,7 @@
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(205, 20);
             this.txtSearch.TabIndex = 25;
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
             // btnDelete
             // 
@@ -145,6 +155,7 @@
             this.btnDelete.TabIndex = 24;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnUpdate
             // 
@@ -157,6 +168,7 @@
             this.btnUpdate.TabIndex = 23;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = false;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnSave
             // 
@@ -169,17 +181,23 @@
             this.btnSave.TabIndex = 22;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // dgvCustomers
             // 
+            this.dgvCustomers.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvCustomers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCustomers.Location = new System.Drawing.Point(59, 262);
             this.dgvCustomers.Name = "dgvCustomers";
             this.dgvCustomers.Size = new System.Drawing.Size(679, 188);
             this.dgvCustomers.TabIndex = 27;
+            this.dgvCustomers.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCustomers_CellContentClick);
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.radioBtnAdmin);
+            this.groupBox1.Controls.Add(this.radioBtnCustomer);
+            this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(59, 18);
             this.groupBox1.Name = "groupBox1";
@@ -200,12 +218,48 @@
             this.btnRefresh.TabIndex = 29;
             this.btnRefresh.Text = "Clear";
             this.btnRefresh.UseVisualStyleBackColor = false;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(31, 143);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(41, 13);
+            this.label1.TabIndex = 30;
+            this.label1.Text = "Role :";
+            // 
+            // radioBtnCustomer
+            // 
+            this.radioBtnCustomer.AutoSize = true;
+            this.radioBtnCustomer.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioBtnCustomer.Location = new System.Drawing.Point(80, 141);
+            this.radioBtnCustomer.Name = "radioBtnCustomer";
+            this.radioBtnCustomer.Size = new System.Drawing.Size(77, 17);
+            this.radioBtnCustomer.TabIndex = 31;
+            this.radioBtnCustomer.TabStop = true;
+            this.radioBtnCustomer.Text = "Customer";
+            this.radioBtnCustomer.UseVisualStyleBackColor = true;
+            this.radioBtnCustomer.CheckedChanged += new System.EventHandler(this.radioBtnCustomer_CheckedChanged);
+            // 
+            // radioBtnAdmin
+            // 
+            this.radioBtnAdmin.AutoSize = true;
+            this.radioBtnAdmin.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioBtnAdmin.Location = new System.Drawing.Point(190, 141);
+            this.radioBtnAdmin.Name = "radioBtnAdmin";
+            this.radioBtnAdmin.Size = new System.Drawing.Size(59, 17);
+            this.radioBtnAdmin.TabIndex = 32;
+            this.radioBtnAdmin.TabStop = true;
+            this.radioBtnAdmin.Text = "Admin";
+            this.radioBtnAdmin.UseVisualStyleBackColor = true;
             // 
             // AdminCustomerManageForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.dgvCustomers);
@@ -228,6 +282,8 @@
             this.Text = "AdminCustomerManageForm";
             this.Load += new System.EventHandler(this.AdminCustomerManageForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCustomers)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -250,5 +306,8 @@
         private System.Windows.Forms.DataGridView dgvCustomers;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnRefresh;
+        private System.Windows.Forms.RadioButton radioBtnAdmin;
+        private System.Windows.Forms.RadioButton radioBtnCustomer;
+        private System.Windows.Forms.Label label1;
     }
 }
