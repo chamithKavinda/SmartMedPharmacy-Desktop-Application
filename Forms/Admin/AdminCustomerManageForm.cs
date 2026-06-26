@@ -64,7 +64,8 @@ namespace SmartMedPharmacy.Forms
                 txtEmail.Text,
                 textAddress.Text,
                 txtPassword.Text,
-                role
+                role,
+                false
             );
 
             if (result == null)

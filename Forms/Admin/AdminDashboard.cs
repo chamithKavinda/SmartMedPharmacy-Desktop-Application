@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using SmartMedPharmacy.Utill;
 
 namespace SmartMedPharmacy.Forms
 {
@@ -78,6 +79,7 @@ namespace SmartMedPharmacy.Forms
 
         private void btnLogout_Click(object sender, EventArgs e)
         {
+            Session.CurrentUser = null;
             LoginForm login = new LoginForm();
             login.Show();
             this.Close();

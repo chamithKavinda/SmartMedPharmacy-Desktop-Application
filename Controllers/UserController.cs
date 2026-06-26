@@ -16,12 +16,7 @@ namespace SmartMedPharmacy.Controller
         }
 
         // ---------------- Save User ----------------
-        public string Register(
-            string mobileNumber,
-            string email,
-            string address,
-            string password,
-            string role)
+        public string Register(string mobileNumber, string email,string address, string password, string role)
         {
             if (string.IsNullOrWhiteSpace(mobileNumber))
                 return "Mobile Number is required.";
@@ -68,12 +63,8 @@ namespace SmartMedPharmacy.Controller
         }
 
         // ---------------- Update User ----------------
-        public string UpdateUser(
-            string mobileNumber,
-            string email,
-            string address,
-            string password,
-            string role)
+        public string UpdateUser(string mobileNumber, string email, string address, string password, string role, bool passwordChanged
+        )
         {
             User existingUser = _userRepository.GetUserByMobile(mobileNumber);
 
@@ -86,15 +77,19 @@ namespace SmartMedPharmacy.Controller
             if (string.IsNullOrWhiteSpace(address))
                 return "Address is required.";
 
-            if (string.IsNullOrWhiteSpace(password))
-                return "Password is required.";
+            string finalPassword;
+
+            if (passwordChanged)
+                finalPassword = PasswordHasher.HashPassword(password);
+            else
+                finalPassword = password;  
 
             User updatedUser = new User
             {
                 MobileNumber = mobileNumber,
                 Email = email,
                 Address = address,
-                Password = PasswordHasher.HashPassword(password),
+                Password = finalPassword,
                 Role = role
             };
 

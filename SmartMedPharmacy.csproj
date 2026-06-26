@@ -191,6 +191,7 @@
     </Compile>
     <Compile Include="Models\Medicine.cs" />
     <Compile Include="Utill\PasswordHasher.cs" />
+    <Compile Include="Utill\Session.cs" />
     <EmbeddedResource Update="Forms\RegisterForm.resx">
       <DependentUpon>RegisterForm.cs</DependentUpon>
     </EmbeddedResource>

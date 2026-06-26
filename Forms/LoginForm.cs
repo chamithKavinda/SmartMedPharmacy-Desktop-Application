@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using SmartMedPharmacy.Utill;
 
 namespace SmartMedPharmacy.Forms
 {
@@ -34,6 +35,8 @@ namespace SmartMedPharmacy.Forms
                 MessageBox.Show("Invalid Mobile Number or Password");
                 return;
             }
+
+            Session.CurrentUser = user;
 
             MessageBox.Show("Login Successful!");
 
