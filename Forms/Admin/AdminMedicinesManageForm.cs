@@ -20,6 +20,7 @@ namespace SmartMedPharmacy.Forms
         {
             InitializeComponent();
             _medicineController = new MedicineController();
+            LoadMedicineData();
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -37,7 +38,11 @@ namespace SmartMedPharmacy.Forms
             MessageBox.Show(result ?? "Medicine Saved Successfully");
 
             if (result == null)
+            {
                 ClearForm();
+                LoadMedicineData();
+            }
+                
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -55,7 +60,10 @@ namespace SmartMedPharmacy.Forms
             MessageBox.Show(result ?? "Medicine Updated Successfully");
 
             if (result == null)
+            {
                 ClearForm();
+                LoadMedicineData();
+            }
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -65,7 +73,10 @@ namespace SmartMedPharmacy.Forms
             MessageBox.Show(result ?? "Medicine Deleted Successfully");
 
             if (result == null)
+            {
                 ClearForm();
+                LoadMedicineData();
+            }
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
@@ -74,17 +85,15 @@ namespace SmartMedPharmacy.Forms
 
             if (medicine != null)
             {
-                txtName.Text = medicine.Name;
-                txtStock.Text = medicine.Stock.ToString();
-                comboMedicineCategory.Text = medicine.Category;
-                txtSupplier.Text = medicine.Supplier;
-                txtPrice.Text = medicine.Price.ToString();
-                txtDosage.Text = medicine.Dosage;
-                dateTimePicker1.Value = medicine.ExpiryDate;
+                List<Medicine> list = new List<Medicine>();
+                list.Add(medicine);
+
+                dgvMedicines.DataSource = null;
+                dgvMedicines.DataSource = list;
             }
             else
             {
-                MessageBox.Show("Medicine Out Of Stock");
+                MessageBox.Show("Medicine not found");
             }
         }
 
@@ -98,6 +107,40 @@ namespace SmartMedPharmacy.Forms
             txtDosage.Clear();
             txtSearch.Clear();
             dateTimePicker1.Value = DateTime.Now;
+        }
+
+        private void LoadMedicineData()
+        {
+            dgvMedicines.DataSource = null;
+            dgvMedicines.DataSource = _medicineController.GetAllMedicines();
+        }
+
+        private void dgvMedicines_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = dgvMedicines.Rows[e.RowIndex];
+
+                txtName.Text = row.Cells["Name"].Value.ToString();
+                txtStock.Text = row.Cells["Stock"].Value.ToString();
+                comboMedicineCategory.Text = row.Cells["Category"].Value.ToString();
+                txtSupplier.Text = row.Cells["Supplier"].Value.ToString();
+                txtPrice.Text = row.Cells["Price"].Value.ToString();
+                txtDosage.Text = row.Cells["Dosage"].Value.ToString();
+
+                dateTimePicker1.Value =
+                    Convert.ToDateTime(row.Cells["ExpiryDate"].Value);
+            }
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            ClearForm();
+
+            dgvMedicines.DataSource = null;
+            LoadMedicineData();
+
+            dgvMedicines.ClearSelection();
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -116,11 +159,6 @@ namespace SmartMedPharmacy.Forms
         }
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dgvMedicines_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
@@ -162,6 +200,9 @@ namespace SmartMedPharmacy.Forms
 
         }
 
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
 
+        }
     }
 }
