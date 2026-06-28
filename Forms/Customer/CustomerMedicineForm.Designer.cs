@@ -32,16 +32,11 @@
             this.txtMedicineName = new System.Windows.Forms.TextBox();
             this.lblCategory = new System.Windows.Forms.Label();
             this.cmbCategory = new System.Windows.Forms.ComboBox();
-            this.lblMinimumPrice = new System.Windows.Forms.Label();
-            this.lblMaxPrice = new System.Windows.Forms.Label();
-            this.numericUpMin = new System.Windows.Forms.NumericUpDown();
-            this.numericUpMax = new System.Windows.Forms.NumericUpDown();
             this.btnFindMedicine = new System.Windows.Forms.Button();
-            this.dgvMedicines = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpMin)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpMax)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvMedicines)).BeginInit();
+            this.viewCart = new System.Windows.Forms.Button();
+            this.flowMedicines = new System.Windows.Forms.FlowLayoutPanel();
+            this.btnRefresh = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -49,7 +44,7 @@
             // 
             this.lblName.AutoSize = true;
             this.lblName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblName.Location = new System.Drawing.Point(90, 73);
+            this.lblName.Location = new System.Drawing.Point(77, 64);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(49, 15);
             this.lblName.TabIndex = 1;
@@ -58,16 +53,17 @@
             // 
             // txtMedicineName
             // 
-            this.txtMedicineName.Location = new System.Drawing.Point(93, 95);
+            this.txtMedicineName.Location = new System.Drawing.Point(80, 86);
             this.txtMedicineName.Name = "txtMedicineName";
-            this.txtMedicineName.Size = new System.Drawing.Size(136, 20);
+            this.txtMedicineName.Size = new System.Drawing.Size(206, 20);
             this.txtMedicineName.TabIndex = 5;
+            this.txtMedicineName.TextChanged += new System.EventHandler(this.txtMedicineName_TextChanged);
             // 
             // lblCategory
             // 
             this.lblCategory.AutoSize = true;
             this.lblCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCategory.Location = new System.Drawing.Point(506, 29);
+            this.lblCategory.Location = new System.Drawing.Point(254, 31);
             this.lblCategory.Name = "lblCategory";
             this.lblCategory.Size = new System.Drawing.Size(71, 15);
             this.lblCategory.TabIndex = 6;
@@ -76,99 +72,90 @@
             // cmbCategory
             // 
             this.cmbCategory.FormattingEnabled = true;
-            this.cmbCategory.Location = new System.Drawing.Point(510, 49);
+            this.cmbCategory.Location = new System.Drawing.Point(257, 53);
             this.cmbCategory.Name = "cmbCategory";
-            this.cmbCategory.Size = new System.Drawing.Size(136, 24);
+            this.cmbCategory.Size = new System.Drawing.Size(206, 24);
             this.cmbCategory.TabIndex = 7;
-            // 
-            // lblMinimumPrice
-            // 
-            this.lblMinimumPrice.AutoSize = true;
-            this.lblMinimumPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMinimumPrice.Location = new System.Drawing.Point(191, 30);
-            this.lblMinimumPrice.Name = "lblMinimumPrice";
-            this.lblMinimumPrice.Size = new System.Drawing.Size(72, 15);
-            this.lblMinimumPrice.TabIndex = 8;
-            this.lblMinimumPrice.Text = "Mini Price";
-            // 
-            // lblMaxPrice
-            // 
-            this.lblMaxPrice.AutoSize = true;
-            this.lblMaxPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMaxPrice.Location = new System.Drawing.Point(351, 30);
-            this.lblMaxPrice.Name = "lblMaxPrice";
-            this.lblMaxPrice.Size = new System.Drawing.Size(71, 15);
-            this.lblMaxPrice.TabIndex = 9;
-            this.lblMaxPrice.Text = "Max Price";
-            // 
-            // numericUpMin
-            // 
-            this.numericUpMin.Location = new System.Drawing.Point(192, 51);
-            this.numericUpMin.Name = "numericUpMin";
-            this.numericUpMin.Size = new System.Drawing.Size(136, 23);
-            this.numericUpMin.TabIndex = 10;
-            // 
-            // numericUpMax
-            // 
-            this.numericUpMax.Location = new System.Drawing.Point(353, 51);
-            this.numericUpMax.Name = "numericUpMax";
-            this.numericUpMax.Size = new System.Drawing.Size(136, 23);
-            this.numericUpMax.TabIndex = 11;
+            this.cmbCategory.SelectedIndexChanged += new System.EventHandler(this.cmbCategory_SelectedIndexChanged);
             // 
             // btnFindMedicine
             // 
-            this.btnFindMedicine.BackColor = System.Drawing.Color.DarkGreen;
+            this.btnFindMedicine.BackColor = System.Drawing.Color.RoyalBlue;
             this.btnFindMedicine.FlatAppearance.BorderSize = 0;
-            this.btnFindMedicine.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFindMedicine.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFindMedicine.ForeColor = System.Drawing.Color.Transparent;
-            this.btnFindMedicine.Location = new System.Drawing.Point(546, 89);
+            this.btnFindMedicine.Location = new System.Drawing.Point(498, 50);
             this.btnFindMedicine.Name = "btnFindMedicine";
-            this.btnFindMedicine.Size = new System.Drawing.Size(100, 31);
+            this.btnFindMedicine.Size = new System.Drawing.Size(75, 29);
             this.btnFindMedicine.TabIndex = 12;
             this.btnFindMedicine.Text = "Find";
             this.btnFindMedicine.UseVisualStyleBackColor = false;
-            // 
-            // dgvMedicines
-            // 
-            this.dgvMedicines.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMedicines.Location = new System.Drawing.Point(61, 207);
-            this.dgvMedicines.Name = "dgvMedicines";
-            this.dgvMedicines.Size = new System.Drawing.Size(678, 243);
-            this.dgvMedicines.TabIndex = 13;
-            this.dgvMedicines.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMedicines_CellContentClick);
+            this.btnFindMedicine.Click += new System.EventHandler(this.btnFindMedicine_Click);
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnRefresh);
             this.groupBox1.Controls.Add(this.cmbCategory);
             this.groupBox1.Controls.Add(this.btnFindMedicine);
             this.groupBox1.Controls.Add(this.lblCategory);
-            this.groupBox1.Controls.Add(this.numericUpMax);
-            this.groupBox1.Controls.Add(this.lblMaxPrice);
-            this.groupBox1.Controls.Add(this.numericUpMin);
-            this.groupBox1.Controls.Add(this.lblMinimumPrice);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(61, 43);
+            this.groupBox1.Location = new System.Drawing.Point(55, 31);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(678, 132);
+            this.groupBox1.Size = new System.Drawing.Size(684, 105);
             this.groupBox1.TabIndex = 14;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Find Your\'s Medicine";
+            // 
+            // viewCart
+            // 
+            this.viewCart.BackColor = System.Drawing.Color.ForestGreen;
+            this.viewCart.FlatAppearance.BorderSize = 0;
+            this.viewCart.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.viewCart.ForeColor = System.Drawing.Color.Transparent;
+            this.viewCart.Location = new System.Drawing.Point(623, 406);
+            this.viewCart.Name = "viewCart";
+            this.viewCart.Size = new System.Drawing.Size(116, 32);
+            this.viewCart.TabIndex = 13;
+            this.viewCart.Text = "View Cart";
+            this.viewCart.UseVisualStyleBackColor = false;
+            this.viewCart.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // flowMedicines
+            // 
+            this.flowMedicines.AutoScroll = true;
+            this.flowMedicines.Location = new System.Drawing.Point(55, 159);
+            this.flowMedicines.Name = "flowMedicines";
+            this.flowMedicines.Size = new System.Drawing.Size(684, 231);
+            this.flowMedicines.TabIndex = 15;
+            // 
+            // btnRefresh
+            // 
+            this.btnRefresh.BackColor = System.Drawing.Color.Peru;
+            this.btnRefresh.FlatAppearance.BorderSize = 0;
+            this.btnRefresh.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRefresh.ForeColor = System.Drawing.Color.White;
+            this.btnRefresh.Location = new System.Drawing.Point(588, 50);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(67, 28);
+            this.btnRefresh.TabIndex = 30;
+            this.btnRefresh.Text = "Clear";
+            this.btnRefresh.UseVisualStyleBackColor = false;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // CustomerMedicineForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.dgvMedicines);
+            this.Controls.Add(this.viewCart);
+            this.Controls.Add(this.flowMedicines);
             this.Controls.Add(this.txtMedicineName);
             this.Controls.Add(this.lblName);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "CustomerMedicineForm";
             this.Text = "CustomerMedicineForm";
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpMin)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpMax)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvMedicines)).EndInit();
+            this.Load += new System.EventHandler(this.CustomerMedicineForm_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -181,12 +168,10 @@
         private System.Windows.Forms.TextBox txtMedicineName;
         private System.Windows.Forms.Label lblCategory;
         private System.Windows.Forms.ComboBox cmbCategory;
-        private System.Windows.Forms.Label lblMinimumPrice;
-        private System.Windows.Forms.Label lblMaxPrice;
-        private System.Windows.Forms.NumericUpDown numericUpMin;
-        private System.Windows.Forms.NumericUpDown numericUpMax;
         private System.Windows.Forms.Button btnFindMedicine;
-        private System.Windows.Forms.DataGridView dgvMedicines;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button viewCart;
+        private System.Windows.Forms.FlowLayoutPanel flowMedicines;
+        private System.Windows.Forms.Button btnRefresh;
     }
 }

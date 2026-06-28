@@ -31,5 +31,45 @@ namespace SmartMedPharmacy.Forms.Customer
         {
 
         }
+
+        private void dgvCart_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void btnRemoveItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtAddress_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnPlaceOrder_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblDiliveryAddress_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
