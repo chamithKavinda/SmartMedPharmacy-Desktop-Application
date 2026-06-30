@@ -10,10 +10,8 @@ create table Users(
 	Role varchar(20) not null
 );
 
-insert into Users (MobileNumber, Email, Address, Password, Role)
-values ('0762106833', 'admin@gmail.com', 'Colombo', 'admin@123', 'Admin');
+insert into Users (MobileNumber, Email, Address, Password, Role) values ('0762106833', 'admin@gmail.com', 'Colombo', 'admin@123', 'Admin');
 
-Customer PW - Cc@123456
 
 create table Medicines (
     MedicineId int AUTO_INCREMENT PRIMARY KEY,

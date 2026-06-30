@@ -42,12 +42,12 @@ namespace SmartMedPharmacy.Forms.Customer
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void buttonClearCart_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void comboBox1_SelectedDeliveryTypeIndexChanged(object sender, EventArgs e)
         {
 
         }
@@ -57,7 +57,7 @@ namespace SmartMedPharmacy.Forms.Customer
 
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void TotalAmount_TextChanged(object sender, EventArgs e)
         {
 
         }

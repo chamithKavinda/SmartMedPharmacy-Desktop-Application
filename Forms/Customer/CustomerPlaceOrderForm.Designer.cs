@@ -79,7 +79,7 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(148, 24);
             this.comboBox1.TabIndex = 7;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedDeliveryTypeIndexChanged);
             // 
             // lblDiliveryAddress
             // 
@@ -126,7 +126,7 @@
             this.button1.TabIndex = 14;
             this.button1.Text = "Clear Cart";
             this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Click += new System.EventHandler(this.buttonClearCart_Click);
             // 
             // labelTotalAmount
             // 
@@ -144,7 +144,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(118, 23);
             this.textBox1.TabIndex = 16;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.textBox1.TextChanged += new System.EventHandler(this.TotalAmount_TextChanged);
             // 
             // lblLKR
             // 
