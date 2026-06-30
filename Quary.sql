@@ -24,6 +24,34 @@ create table Medicines (
     ExpiryDate date NOT NULL
 );
 
+CREATE TABLE Orders (
+    OrderId INT PRIMARY KEY AUTO_INCREMENT,
+    CustomerMobile VARCHAR(10) NOT NULL,
+    OrderDate DATETIME NOT NULL,
+    DeliveryType VARCHAR(20) NOT NULL,
+    DeliveryAddress VARCHAR(150),
+    TotalAmount DECIMAL(10,2) NOT NULL,
+    Status VARCHAR(20) NOT NULL,
+
+    FOREIGN KEY (CustomerMobile)
+    REFERENCES Users(MobileNumber)
+);
+
+CREATE TABLE OrderItems (
+    OrderItemId INT PRIMARY KEY AUTO_INCREMENT,
+    OrderId INT NOT NULL,
+    MedicineId INT NOT NULL,
+    Quantity INT NOT NULL,
+    Price DECIMAL(10,2) NOT NULL,
+
+    FOREIGN KEY (OrderId)
+    REFERENCES Orders(OrderId),
+
+    FOREIGN KEY (MedicineId)
+    REFERENCES Medicines(MedicineId)
+);
+
+
 
 
 

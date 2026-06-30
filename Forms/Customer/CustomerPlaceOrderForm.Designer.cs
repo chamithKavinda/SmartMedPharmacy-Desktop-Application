@@ -48,6 +48,7 @@
             // 
             // dgvCart
             // 
+            this.dgvCart.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvCart.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCart.Location = new System.Drawing.Point(32, 32);
             this.dgvCart.Name = "dgvCart";
@@ -72,9 +73,6 @@
             "Pickup",
             "Dilivery"});
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "PickUp",
-            "Dilivery"});
             this.comboBox1.Location = new System.Drawing.Point(141, 42);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(148, 24);

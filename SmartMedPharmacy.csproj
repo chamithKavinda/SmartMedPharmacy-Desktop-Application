@@ -102,8 +102,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\MedicineController.cs" />
+    <Compile Include="Controllers\PlaceOrderController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Data\MedicineRepository.cs" />
+    <Compile Include="Data\PlaceOrderRepository.cs" />
     <Compile Include="Data\UserRepository.cs" />
     <Compile Include="Forms\Admin\AdminDashboardStatsForm.cs">
       <SubType>Form</SubType>
@@ -192,6 +194,8 @@
     <Compile Include="Models\CartItem.cs" />
     <Compile Include="Models\CartManager.cs" />
     <Compile Include="Models\Medicine.cs" />
+    <Compile Include="Models\Order.cs" />
+    <Compile Include="Models\OrderItem.cs" />
     <Compile Include="Utill\PasswordHasher.cs" />
     <Compile Include="Utill\Session.cs" />
     <EmbeddedResource Update="Forms\RegisterForm.resx">
