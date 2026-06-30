@@ -104,7 +104,7 @@ namespace SmartMedPharmacy.Forms.Customer
 
         private void btnMedicines_Click(object sender, EventArgs e)
         {
-            LoadForm(new CustomerMedicineForm());
+            LoadForm(new CustomerMedicineForm(LoadForm));
         }
 
         private void btnPlaceOrders_Click(object sender, EventArgs e)

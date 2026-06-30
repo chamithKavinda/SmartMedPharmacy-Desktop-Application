@@ -120,7 +120,7 @@
             this.btnPlaceOrders.Name = "btnPlaceOrders";
             this.btnPlaceOrders.Size = new System.Drawing.Size(126, 35);
             this.btnPlaceOrders.TabIndex = 3;
-            this.btnPlaceOrders.Text = "Place Orders";
+            this.btnPlaceOrders.Text = "View Cart";
             this.btnPlaceOrders.UseVisualStyleBackColor = false;
             this.btnPlaceOrders.Click += new System.EventHandler(this.btnPlaceOrders_Click);
             // 

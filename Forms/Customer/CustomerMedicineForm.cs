@@ -17,7 +17,7 @@ namespace SmartMedPharmacy.Forms.Customer
 
         private Action<Form> loadForm;
 
-        public CustomerMedicineForm()
+        public CustomerMedicineForm(Action<Form> loadForm)
         {
             InitializeComponent();
             this.loadForm = loadForm;
@@ -254,8 +254,7 @@ namespace SmartMedPharmacy.Forms.Customer
 
         private void button1_Click(object sender, EventArgs e)
         {
-            CustomerPlaceOrderForm form = new CustomerPlaceOrderForm();
-            form.Show();
+            loadForm(new CustomerPlaceOrderForm());
         }
 
         private void btnRefresh_Click(object sender, EventArgs e)
