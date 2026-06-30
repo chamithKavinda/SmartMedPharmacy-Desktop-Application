@@ -168,7 +168,7 @@
             this.btnRemoveOrder.Name = "btnRemoveOrder";
             this.btnRemoveOrder.Size = new System.Drawing.Size(117, 31);
             this.btnRemoveOrder.TabIndex = 13;
-            this.btnRemoveOrder.Text = "Remove Order";
+            this.btnRemoveOrder.Text = "Cancel Order";
             this.btnRemoveOrder.UseVisualStyleBackColor = false;
             this.btnRemoveOrder.Click += new System.EventHandler(this.btnRemoveOrder_Click);
             // 
@@ -195,6 +195,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "CustomerTrackOrderForm";
             this.Text = "CustomerTrackOrderForm";
+            this.Load += new System.EventHandler(this.CustomerTrackOrderForm_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrders)).EndInit();
