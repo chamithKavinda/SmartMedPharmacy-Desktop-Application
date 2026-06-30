@@ -103,9 +103,11 @@
   <ItemGroup>
     <Compile Include="Controllers\MedicineController.cs" />
     <Compile Include="Controllers\PlaceOrderController.cs" />
+    <Compile Include="Controllers\TrackOrderController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Data\MedicineRepository.cs" />
     <Compile Include="Data\PlaceOrderRepository.cs" />
+    <Compile Include="Data\TrackOrderRepository.cs" />
     <Compile Include="Data\UserRepository.cs" />
     <Compile Include="Forms\Admin\AdminDashboardStatsForm.cs">
       <SubType>Form</SubType>

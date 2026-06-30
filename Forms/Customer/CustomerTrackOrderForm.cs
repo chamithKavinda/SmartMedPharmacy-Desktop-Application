@@ -31,5 +31,30 @@ namespace SmartMedPharmacy
         {
 
         }
+
+        private void lblOrderID_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblOrderDate_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblOrderStatus_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblTotalAmount_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnRemoveOrder_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
