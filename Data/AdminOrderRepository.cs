@@ -82,5 +82,35 @@ namespace SmartMedPharmacy.Repository
                 return rows > 0;
             }
         }
+
+        // ---------------- Search Order ----------------
+        public List<Order> SearchOrder(string mobile)
+        {
+            List<Order> orders = new List<Order>();
+
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+                conn.Open();
+
+                string query = "SELECT * FROM Orders WHERE CustomerMobile=@mobile";
+
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+
+                cmd.Parameters.AddWithValue("@mobile", mobile);
+
+                MySqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    orders.Add(new Order
+                    {
+                        OrderId = Convert.ToInt32(reader["OrderId"]),
+                        CustomerMobile = reader["CustomerMobile"].ToString(),
+                        Status = reader["Status"].ToString()
+                    });
+                }
+            }
+            return orders;
+        }
     }
 }

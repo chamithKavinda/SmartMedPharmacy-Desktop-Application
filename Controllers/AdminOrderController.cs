@@ -22,5 +22,10 @@ namespace SmartMedPharmacy.Controller
         {
             return repository.DeleteOrder(id);
         }
+
+        public List<Order> SearchOrders(string keyword)
+        {
+            return repository.SearchOrder(keyword);
+        }
     }
 }
