@@ -72,7 +72,7 @@ namespace SmartMedPharmacy.Forms
 
             if (success)
             {
-                MessageBox.Show("Deleted");
+                MessageBox.Show("Oredr Deleted Successfully");
 
                 LoadOrders();
             }

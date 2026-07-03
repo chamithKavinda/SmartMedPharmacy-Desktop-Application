@@ -71,15 +71,39 @@ namespace SmartMedPharmacy.Repository
             {
                 conn.Open();
 
-                string query = "DELETE FROM Orders WHERE OrderId=@id";
+                using (MySqlTransaction transaction = conn.BeginTransaction())
+                {
+                    try
+                    {
+                        string deleteItemsQuery = "DELETE FROM OrderItems WHERE OrderId = @id";
+                        using (MySqlCommand cmdItems = new MySqlCommand(deleteItemsQuery, conn, transaction))
+                        {
+                            cmdItems.Parameters.AddWithValue("@id", orderId);
+                            cmdItems.ExecuteNonQuery();
+                        }
 
-                MySqlCommand cmd = new MySqlCommand(query, conn);
+                        string deleteOrderQuery = "DELETE FROM Orders WHERE OrderId = @id";
+                        using (MySqlCommand cmdOrder = new MySqlCommand(deleteOrderQuery, conn, transaction))
+                        {
+                            cmdOrder.Parameters.AddWithValue("@id", orderId);
+                            int rows = cmdOrder.ExecuteNonQuery();
 
-                cmd.Parameters.AddWithValue("@id", orderId);
+                            if (rows > 0)
+                            {
+                                transaction.Commit();
+                                return true;
+                            }
+                        }
 
-                int rows = cmd.ExecuteNonQuery();
-
-                return rows > 0;
+                        transaction.Rollback();
+                        return false;
+                    }
+                    catch (Exception)
+                    {
+                        transaction.Rollback();
+                        throw;
+                    }
+                }
             }
         }
 
