@@ -1,5 +1,6 @@
-﻿using SmartMedPharmacy.Repository;
-using SmartMedPharmacy.Models;
+﻿using SmartMedPharmacy.Models;
+using SmartMedPharmacy.Repository;
+using System;
 using System.Collections.Generic;
 
 namespace SmartMedPharmacy.Controller
@@ -27,9 +28,9 @@ namespace SmartMedPharmacy.Controller
         {
             return repository.SearchOrder(keyword);
         }
-        public string GetCustomerEmail(string customerMobile)
+        public Tuple<string, string> GetCustomerDetails(string customerMobile)
         {
-            return repository.GetCustomerEmail(customerMobile);
+            return repository.GetCustomerDetails(customerMobile);
         }
 
         public List<string> GetOrderMedicines(int orderId)

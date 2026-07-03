@@ -123,20 +123,28 @@ namespace SmartMedPharmacy.Repository
             return orders;
         }
 
-        // ---------------- Get Customer Email ----------------
-        public string GetCustomerEmail(string customerMobile)
+        // ---------------- Get Customer Email and Address ----------------
+        public Tuple<string, string> GetCustomerDetails(string customerMobile)
         {
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
                 conn.Open();
-                string query = "SELECT Email FROM Users WHERE MobileNumber = @mobile LIMIT 1";
+                string query = "SELECT Email, Address FROM Users WHERE MobileNumber = @mobile LIMIT 1";
 
                 MySqlCommand cmd = new MySqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@mobile", customerMobile);
 
-                object result = cmd.ExecuteScalar();
-                return result != null ? result.ToString() : string.Empty;
+                using (MySqlDataReader reader = cmd.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        string email = reader["Email"]?.ToString() ?? string.Empty;
+                        string address = reader["Address"]?.ToString() ?? string.Empty;
+                        return Tuple.Create(email, address);
+                    }
+                }
             }
+            return Tuple.Create(string.Empty, string.Empty);
         }
 
         // ---------------- Get Medicines with Quantity for Order ----------------

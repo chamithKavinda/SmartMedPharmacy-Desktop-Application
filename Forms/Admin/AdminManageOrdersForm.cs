@@ -30,17 +30,14 @@ namespace SmartMedPharmacy.Forms
                 DataGridViewRow row = dgvManageOrders.Rows[e.RowIndex];
                 int orderId = Convert.ToInt32(row.Cells["OrderId"].Value);
                 string mobile = row.Cells["CustomerMobile"].Value.ToString();
-
                 txtOrderID.Text = orderId.ToString();
                 txtCustomerMobileNumber.Text = mobile;
-                txtCustomerAddress.Text = row.Cells["DeliveryAddress"].Value?.ToString() ?? string.Empty;
                 cmbOrderStatus.Text = row.Cells["Status"].Value?.ToString() ?? string.Empty;
 
-                string email = controller.GetCustomerEmail(mobile);
-                txtCustomerEmail.Text = email;
-
+                var customerDetails = controller.GetCustomerDetails(mobile);
+                txtCustomerEmail.Text = customerDetails.Item1;
+                txtCustomerAddress.Text = customerDetails.Item2;
                 List<string> medicinesList = controller.GetOrderMedicines(orderId);
-
                 txtMedicines.Text = string.Join(", ", medicinesList);
             }
         }
