@@ -27,5 +27,14 @@ namespace SmartMedPharmacy.Controller
         {
             return repository.SearchOrder(keyword);
         }
+        public string GetCustomerEmail(string customerMobile)
+        {
+            return repository.GetCustomerEmail(customerMobile);
+        }
+
+        public List<string> GetOrderMedicines(int orderId)
+        {
+            return repository.GetOrderMedicines(orderId);
+        }
     }
 }

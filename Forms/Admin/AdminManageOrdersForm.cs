@@ -23,25 +23,25 @@ namespace SmartMedPharmacy.Forms
             LoadOrders();
         }
 
-
         private void dgvManageOrders_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
             {
-                DataGridViewRow row =
-                    dgvManageOrders.Rows[e.RowIndex];
+                DataGridViewRow row = dgvManageOrders.Rows[e.RowIndex];
+                int orderId = Convert.ToInt32(row.Cells["OrderId"].Value);
+                string mobile = row.Cells["CustomerMobile"].Value.ToString();
 
-                txtOrderID.Text =
-                    row.Cells["OrderId"].Value.ToString();
+                txtOrderID.Text = orderId.ToString();
+                txtCustomerMobileNumber.Text = mobile;
+                txtCustomerAddress.Text = row.Cells["DeliveryAddress"].Value?.ToString() ?? string.Empty;
+                cmbOrderStatus.Text = row.Cells["Status"].Value?.ToString() ?? string.Empty;
 
-                txtCustomerMobileNumber.Text =
-                    row.Cells["CustomerMobile"].Value.ToString();
+                string email = controller.GetCustomerEmail(mobile);
+                txtCustomerEmail.Text = email;
 
-                txtCustomerAddress.Text =
-                    row.Cells["DeliveryAddress"].Value.ToString();
+                List<string> medicinesList = controller.GetOrderMedicines(orderId);
 
-                cmbOrderStatus.Text =
-                    row.Cells["Status"].Value.ToString();
+                txtMedicines.Text = string.Join(", ", medicinesList);
             }
         }
 

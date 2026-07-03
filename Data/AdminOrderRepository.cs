@@ -122,5 +122,53 @@ namespace SmartMedPharmacy.Repository
             }
             return orders;
         }
+
+        // ---------------- Get Customer Email ----------------
+        public string GetCustomerEmail(string customerMobile)
+        {
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+                conn.Open();
+                string query = "SELECT Email FROM Users WHERE MobileNumber = @mobile LIMIT 1";
+
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@mobile", customerMobile);
+
+                object result = cmd.ExecuteScalar();
+                return result != null ? result.ToString() : string.Empty;
+            }
+        }
+
+        // ---------------- Get Medicines with Quantity for Order ----------------
+        public List<string> GetOrderMedicines(int orderId)
+        {
+            List<string> medicines = new List<string>();
+
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+                conn.Open();
+
+                string query = @"SELECT m.Name, oi.Quantity 
+                         FROM OrderItems oi 
+                         INNER JOIN Medicines m ON oi.MedicineId = m.MedicineId 
+                         WHERE oi.OrderId = @orderId";
+
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@orderId", orderId);
+
+                using (MySqlDataReader reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        string name = reader["Name"].ToString();
+                        string qty = reader["Quantity"].ToString();
+                        medicines.Add($"{name} x{qty}");
+                    }
+                }
+            }
+            return medicines;
+        }
     }
+
+
 }
