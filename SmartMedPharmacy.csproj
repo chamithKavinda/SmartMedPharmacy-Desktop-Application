@@ -101,10 +101,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\AdminOrderController.cs" />
     <Compile Include="Controllers\MedicineController.cs" />
     <Compile Include="Controllers\PlaceOrderController.cs" />
     <Compile Include="Controllers\TrackOrderController.cs" />
     <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="Data\AdminOrderRepository.cs" />
     <Compile Include="Data\MedicineRepository.cs" />
     <Compile Include="Data\PlaceOrderRepository.cs" />
     <Compile Include="Data\TrackOrderRepository.cs" />
