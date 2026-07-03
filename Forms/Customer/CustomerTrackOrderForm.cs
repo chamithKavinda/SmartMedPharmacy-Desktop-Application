@@ -48,13 +48,44 @@ namespace SmartMedPharmacy
             dgvOrders.DataSource = orders.Select(o => new
             {
                 o.OrderId,
+
+                Medicines = string.Join(", ",
+                o.Items.Select(i =>
+                i.MedicineName + " x" + i.Quantity)),
                 o.OrderDate,
                 o.TotalAmount,
                 o.Status
-             }).ToList();
+            }).ToList();
+
+            ApplyRowColors();
+            dgvOrders.Refresh();
+
+            if (orders.Count > 0)
+            {
+                ShowOrderDetails(orders[0]);
+            }
+            else
+            {
+                ClearLabels();
+            }
         }
 
-        private void dataGridView1_CellContentClick( object sender, DataGridViewCellEventArgs e)
+        private void ShowOrderDetails(Order order)
+        {
+            selectedOrderId = order.OrderId;
+
+            lblOrderID.Text = order.OrderId.ToString();
+
+            lblOrderDate.Text = order.OrderDate.ToString("dd-MM-yyyy hh:mm tt");
+
+            lblOrderStatus.Text = order.Status;
+
+            lblTotalAmount.Text = "Rs " + order.TotalAmount;
+        }
+
+
+
+        private void dataGridView1_CellContentClick( object sender,DataGridViewCellEventArgs e)
         {
             if (e.RowIndex < 0)
                 return;
@@ -63,18 +94,39 @@ namespace SmartMedPharmacy
 
             Order order = orders.FirstOrDefault(x => x.OrderId == orderId);
 
-            if (order == null)
-                return;
+            if (order != null)
+            {
+                ShowOrderDetails(order);
+            }
+        }
 
-            selectedOrderId = order.OrderId;
+        private void ApplyRowColors()
+        {
+            foreach (DataGridViewRow row in dgvOrders.Rows)
+            {
+                if (row.Cells["Status"].Value == null)
+                    continue;
 
-            lblOrderID.Text = order.OrderId.ToString();
+                string status =
+                    row.Cells["Status"].Value.ToString();
 
-            lblOrderDate.Text = order.OrderDate.ToString();
-
-            lblOrderStatus.Text = order.Status;
-
-            lblTotalAmount.Text = "Rs " + order.TotalAmount;
+                if (status == "Cancelled")
+                {
+                    row.DefaultCellStyle.BackColor = Color.LightCoral;
+                }
+                else if (status == "Pending")
+                {
+                    row.DefaultCellStyle.BackColor = Color.LightYellow;
+                }
+                else if (status == "Delivered")
+                {
+                    row.DefaultCellStyle.BackColor = Color.LightGreen;
+                }
+                else if (status == "Processing")
+                {
+                    row.DefaultCellStyle.BackColor = Color.LightBlue;
+                }
+            }
         }
 
         private void btnRemoveOrder_Click(object sender, EventArgs e)

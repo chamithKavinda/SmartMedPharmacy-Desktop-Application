@@ -67,7 +67,7 @@
             // 
             this.lblTotalAmount.AutoSize = true;
             this.lblTotalAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalAmount.Location = new System.Drawing.Point(573, 74);
+            this.lblTotalAmount.Location = new System.Drawing.Point(590, 74);
             this.lblTotalAmount.Name = "lblTotalAmount";
             this.lblTotalAmount.Size = new System.Drawing.Size(129, 20);
             this.lblTotalAmount.TabIndex = 7;
@@ -78,7 +78,7 @@
             // 
             this.lblOrderStatus.AutoSize = true;
             this.lblOrderStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblOrderStatus.Location = new System.Drawing.Point(393, 74);
+            this.lblOrderStatus.Location = new System.Drawing.Point(419, 74);
             this.lblOrderStatus.Name = "lblOrderStatus";
             this.lblOrderStatus.Size = new System.Drawing.Size(125, 20);
             this.lblOrderStatus.TabIndex = 6;
@@ -89,7 +89,7 @@
             // 
             this.lblOrderDate.AutoSize = true;
             this.lblOrderDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblOrderDate.Location = new System.Drawing.Point(211, 74);
+            this.lblOrderDate.Location = new System.Drawing.Point(197, 74);
             this.lblOrderDate.Name = "lblOrderDate";
             this.lblOrderDate.Size = new System.Drawing.Size(111, 20);
             this.lblOrderDate.TabIndex = 5;
@@ -100,7 +100,7 @@
             // 
             this.lblOrderID.AutoSize = true;
             this.lblOrderID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblOrderID.Location = new System.Drawing.Point(36, 74);
+            this.lblOrderID.Location = new System.Drawing.Point(62, 74);
             this.lblOrderID.Name = "lblOrderID";
             this.lblOrderID.Size = new System.Drawing.Size(91, 20);
             this.lblOrderID.TabIndex = 4;
@@ -111,7 +111,7 @@
             // 
             this.lblOrderTotalAmountTitle.AutoSize = true;
             this.lblOrderTotalAmountTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblOrderTotalAmountTitle.Location = new System.Drawing.Point(584, 44);
+            this.lblOrderTotalAmountTitle.Location = new System.Drawing.Point(590, 44);
             this.lblOrderTotalAmountTitle.Name = "lblOrderTotalAmountTitle";
             this.lblOrderTotalAmountTitle.Size = new System.Drawing.Size(92, 17);
             this.lblOrderTotalAmountTitle.TabIndex = 3;
@@ -121,7 +121,7 @@
             // 
             this.lblOrderStatusTitle.AutoSize = true;
             this.lblOrderStatusTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblOrderStatusTitle.Location = new System.Drawing.Point(424, 44);
+            this.lblOrderStatusTitle.Location = new System.Drawing.Point(433, 44);
             this.lblOrderStatusTitle.Name = "lblOrderStatusTitle";
             this.lblOrderStatusTitle.Size = new System.Drawing.Size(48, 17);
             this.lblOrderStatusTitle.TabIndex = 2;
@@ -132,7 +132,7 @@
             // 
             this.lblOrderDateTitle.AutoSize = true;
             this.lblOrderDateTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblOrderDateTitle.Location = new System.Drawing.Point(226, 44);
+            this.lblOrderDateTitle.Location = new System.Drawing.Point(232, 44);
             this.lblOrderDateTitle.Name = "lblOrderDateTitle";
             this.lblOrderDateTitle.Size = new System.Drawing.Size(79, 17);
             this.lblOrderDateTitle.TabIndex = 1;
