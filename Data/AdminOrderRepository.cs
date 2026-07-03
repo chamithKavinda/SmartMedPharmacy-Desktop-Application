@@ -20,7 +20,7 @@ namespace SmartMedPharmacy.Repository
             {
                 conn.Open();
 
-                string query = "SELECT * FROM Orders";
+                string query = "SELECT * FROM Orders ORDER BY OrderDate DESC";
 
                 MySqlCommand cmd = new MySqlCommand(query, conn);
 
@@ -84,7 +84,7 @@ namespace SmartMedPharmacy.Repository
         }
 
         // ---------------- Search Order ----------------
-        public List<Order> SearchOrder(string mobile)
+        public List<Order> SearchOrder(string keyword)
         {
             List<Order> orders = new List<Order>();
 
@@ -92,11 +92,17 @@ namespace SmartMedPharmacy.Repository
             {
                 conn.Open();
 
-                string query = "SELECT * FROM Orders WHERE CustomerMobile=@mobile";
+                string query = @"SELECT * FROM Orders 
+                         WHERE OrderId LIKE @keyword 
+                            OR CustomerMobile LIKE @keyword 
+                            OR DeliveryType LIKE @keyword 
+                            OR DeliveryAddress LIKE @keyword 
+                            OR Status LIKE @keyword 
+                         ORDER BY OrderDate DESC";
 
                 MySqlCommand cmd = new MySqlCommand(query, conn);
 
-                cmd.Parameters.AddWithValue("@mobile", mobile);
+                cmd.Parameters.AddWithValue("@keyword", "%" + keyword + "%");
 
                 MySqlDataReader reader = cmd.ExecuteReader();
 
@@ -106,6 +112,10 @@ namespace SmartMedPharmacy.Repository
                     {
                         OrderId = Convert.ToInt32(reader["OrderId"]),
                         CustomerMobile = reader["CustomerMobile"].ToString(),
+                        OrderDate = Convert.ToDateTime(reader["OrderDate"]),
+                        DeliveryType = reader["DeliveryType"].ToString(),
+                        DeliveryAddress = reader["DeliveryAddress"].ToString(),
+                        TotalAmount = Convert.ToDecimal(reader["TotalAmount"]),
                         Status = reader["Status"].ToString()
                     });
                 }

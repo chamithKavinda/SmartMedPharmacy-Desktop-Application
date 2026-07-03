@@ -85,17 +85,44 @@ namespace SmartMedPharmacy.Forms
         {
             dgvManageOrders.DataSource = null;
             dgvManageOrders.AutoGenerateColumns = true;
-            dgvManageOrders.DataSource = controller.GetOrders();
+            var sortedOrders = controller.GetOrders().OrderByDescending(o => o.OrderDate).ToList();
 
+            dgvManageOrders.DataSource = sortedOrders;
             dgvManageOrders.ClearSelection();
         }
 
-
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            dgvManageOrders.DataSource = controller.SearchOrders(txtSearch.Text);
+            var results = controller.SearchOrders(txtSearch.Text);
+
+            dgvManageOrders.DataSource = null;
+
+            if (results != null && results.Any())
+            {
+                dgvManageOrders.AutoGenerateColumns = true;
+                dgvManageOrders.DataSource = results;
+            }
+            else
+            {
+                MessageBox.Show("No orders found matching your search criteria.");
+                LoadOrders();
+            }
         }
 
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            txtOrderID.Clear();
+            txtCustomerMobileNumber.Clear();
+            txtCustomerAddress.Clear();
+            txtSearch.Clear();
+            txtCustomerEmail.Clear();
+            txtMedicines.Clear();
+
+            cmbOrderStatus.SelectedIndex = -1;
+            cmbOrderStatus.Text = string.Empty;
+
+            LoadOrders();
+        }
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
@@ -146,5 +173,6 @@ namespace SmartMedPharmacy.Forms
         {
 
         }
+
     }
 }

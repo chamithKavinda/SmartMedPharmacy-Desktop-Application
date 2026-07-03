@@ -46,6 +46,7 @@
             this.btnUpdate = new System.Windows.Forms.Button();
             this.dgvManageOrders = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnRefresh = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvManageOrders)).BeginInit();
             this.SuspendLayout();
             // 
@@ -167,7 +168,7 @@
             // 
             this.btnSearch.BackColor = System.Drawing.Color.Goldenrod;
             this.btnSearch.FlatAppearance.BorderSize = 0;
-            this.btnSearch.Location = new System.Drawing.Point(689, 259);
+            this.btnSearch.Location = new System.Drawing.Point(621, 259);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(67, 29);
             this.btnSearch.TabIndex = 31;
@@ -177,7 +178,7 @@
             // 
             // txtSearch
             // 
-            this.txtSearch.Location = new System.Drawing.Point(478, 264);
+            this.txtSearch.Location = new System.Drawing.Point(410, 264);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(205, 20);
             this.txtSearch.TabIndex = 30;
@@ -229,11 +230,25 @@
             this.groupBox1.Text = "Manage Orders";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
+            // btnRefresh
+            // 
+            this.btnRefresh.BackColor = System.Drawing.Color.Peru;
+            this.btnRefresh.FlatAppearance.BorderSize = 0;
+            this.btnRefresh.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRefresh.Location = new System.Drawing.Point(694, 260);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(67, 28);
+            this.btnRefresh.TabIndex = 34;
+            this.btnRefresh.Text = "Clear";
+            this.btnRefresh.UseVisualStyleBackColor = false;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            // 
             // AdminManageOrdersForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.dgvManageOrders);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.txtSearch);
@@ -281,5 +296,6 @@
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.DataGridView dgvManageOrders;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button btnRefresh;
     }
 }
