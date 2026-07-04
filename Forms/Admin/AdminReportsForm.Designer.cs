@@ -107,6 +107,7 @@
             this.txtTotalSales.Name = "txtTotalSales";
             this.txtTotalSales.Size = new System.Drawing.Size(278, 20);
             this.txtTotalSales.TabIndex = 14;
+            this.txtTotalSales.TextChanged += new System.EventHandler(this.txtTotalSales_TextChanged);
             // 
             // labelTotalsales
             // 
@@ -124,6 +125,7 @@
             this.txtTotalOrders.Name = "txtTotalOrders";
             this.txtTotalOrders.Size = new System.Drawing.Size(278, 20);
             this.txtTotalOrders.TabIndex = 16;
+            this.txtTotalOrders.TextChanged += new System.EventHandler(this.txtTotalOrders_TextChanged);
             // 
             // labelTotalOrders
             // 
@@ -141,6 +143,7 @@
             this.txtTotalStockCount.Name = "txtTotalStockCount";
             this.txtTotalStockCount.Size = new System.Drawing.Size(278, 20);
             this.txtTotalStockCount.TabIndex = 18;
+            this.txtTotalStockCount.TextChanged += new System.EventHandler(this.txtTotalStockCount_TextChanged);
             // 
             // labelStockCount
             // 
@@ -158,6 +161,7 @@
             this.dtpFromDate.Name = "dtpFromDate";
             this.dtpFromDate.Size = new System.Drawing.Size(278, 20);
             this.dtpFromDate.TabIndex = 19;
+            this.dtpFromDate.ValueChanged += new System.EventHandler(this.dtpFromDate_ValueChanged);
             // 
             // dtpToDate
             // 
@@ -165,6 +169,7 @@
             this.dtpToDate.Name = "dtpToDate";
             this.dtpToDate.Size = new System.Drawing.Size(278, 20);
             this.dtpToDate.TabIndex = 20;
+            this.dtpToDate.ValueChanged += new System.EventHandler(this.dtpToDate_ValueChanged);
             // 
             // btnCustomerOrderHistory
             // 
@@ -178,6 +183,7 @@
             this.btnCustomerOrderHistory.TabIndex = 32;
             this.btnCustomerOrderHistory.Text = "Order History";
             this.btnCustomerOrderHistory.UseVisualStyleBackColor = false;
+            this.btnCustomerOrderHistory.Click += new System.EventHandler(this.btnCustomerOrderHistory_Click);
             // 
             // btnStockReport
             // 
@@ -191,6 +197,7 @@
             this.btnStockReport.TabIndex = 31;
             this.btnStockReport.Text = "Stock Report";
             this.btnStockReport.UseVisualStyleBackColor = false;
+            this.btnStockReport.Click += new System.EventHandler(this.btnStockReport_Click);
             // 
             // btnSalesReport
             // 
@@ -204,6 +211,7 @@
             this.btnSalesReport.TabIndex = 30;
             this.btnSalesReport.Text = "Sales Report";
             this.btnSalesReport.UseVisualStyleBackColor = false;
+            this.btnSalesReport.Click += new System.EventHandler(this.btnSalesReport_Click);
             // 
             // btnExportCSV
             // 
@@ -217,6 +225,7 @@
             this.btnExportCSV.TabIndex = 33;
             this.btnExportCSV.Text = "Export CSV";
             this.btnExportCSV.UseVisualStyleBackColor = false;
+            this.btnExportCSV.Click += new System.EventHandler(this.btnExportCSV_Click);
             // 
             // dgvReports
             // 
@@ -225,6 +234,7 @@
             this.dgvReports.Name = "dgvReports";
             this.dgvReports.Size = new System.Drawing.Size(618, 176);
             this.dgvReports.TabIndex = 34;
+            this.dgvReports.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvReports_CellContentClick);
             // 
             // AdminReportsForm
             // 

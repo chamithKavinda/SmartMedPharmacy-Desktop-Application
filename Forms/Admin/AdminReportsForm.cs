@@ -51,5 +51,55 @@ namespace SmartMedPharmacy.Forms
         {
 
         }
+
+        private void dtpFromDate_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dtpToDate_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtTotalSales_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtTotalOrders_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtTotalStockCount_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSalesReport_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnStockReport_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCustomerOrderHistory_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnExportCSV_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvReports_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
