@@ -104,11 +104,13 @@
     <Compile Include="Controllers\AdminOrderController.cs" />
     <Compile Include="Controllers\MedicineController.cs" />
     <Compile Include="Controllers\PlaceOrderController.cs" />
+    <Compile Include="Controllers\ReportController.cs" />
     <Compile Include="Controllers\TrackOrderController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Data\AdminOrderRepository.cs" />
     <Compile Include="Data\MedicineRepository.cs" />
     <Compile Include="Data\PlaceOrderRepository.cs" />
+    <Compile Include="Data\ReportRepository.cs" />
     <Compile Include="Data\TrackOrderRepository.cs" />
     <Compile Include="Data\UserRepository.cs" />
     <Compile Include="Forms\Admin\AdminDashboardStatsForm.cs">
