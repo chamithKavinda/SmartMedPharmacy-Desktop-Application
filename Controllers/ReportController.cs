@@ -18,9 +18,9 @@ namespace SmartMedPharmacy.Controller
             return reportRepository.GetStockReport();
         }
 
-        public DataTable GetCustomerOrderHistory(string mobile)
+        public DataTable GetCustomerOrderHistory()
         {
-            return reportRepository.GetCustomerOrders(mobile);
+            return reportRepository.GetDeliveredOrders();
         }
 
         public decimal GetTotalSales(DateTime from, DateTime to)
@@ -37,5 +37,6 @@ namespace SmartMedPharmacy.Controller
         {
             return reportRepository.GetTotalStock();
         }
+
     }
 }

@@ -66,27 +66,27 @@ namespace SmartMedPharmacy.Repository
             return table;
         }
 
-        // Customer History
-        public DataTable GetCustomerOrders(string mobile)
+        // Order History
+        public DataTable GetDeliveredOrders()
         {
             DataTable table = new DataTable();
 
-            using (MySqlConnection conn =
-                new MySqlConnection(connectionString))
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
                 conn.Open();
 
-                string query =
-                @"SELECT *
-                  FROM Orders
-                  WHERE CustomerMobile=@mobile
-                  ORDER BY OrderDate DESC";
+                string query = @"SELECT OrderId,
+                                CustomerMobile,
+                                OrderDate,
+                                DeliveryType,
+                                DeliveryAddress,
+                                TotalAmount,
+                                Status
+                         FROM Orders
+                         WHERE Status = 'Delivered'
+                         ORDER BY OrderDate DESC";
 
-                MySqlDataAdapter adapter =
-                    new MySqlDataAdapter(query, conn);
-
-                adapter.SelectCommand.Parameters.AddWithValue("@mobile", mobile);
-
+                MySqlDataAdapter adapter = new MySqlDataAdapter(query, conn);
                 adapter.Fill(table);
             }
 

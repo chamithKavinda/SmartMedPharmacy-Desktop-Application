@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.txtTitle = new System.Windows.Forms.TextBox();
-            this.labelTitle = new System.Windows.Forms.Label();
             this.labelFromDate = new System.Windows.Forms.Label();
             this.labelToDate = new System.Windows.Forms.Label();
             this.txtTotalSales = new System.Windows.Forms.TextBox();
@@ -47,32 +45,14 @@
             this.dgvReports = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvReports)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // txtTitle
-            // 
-            this.txtTitle.Location = new System.Drawing.Point(86, 69);
-            this.txtTitle.Name = "txtTitle";
-            this.txtTitle.Size = new System.Drawing.Size(278, 20);
-            this.txtTitle.TabIndex = 8;
-            this.txtTitle.TextChanged += new System.EventHandler(this.txtOrderID_TextChanged);
-            // 
-            // labelTitle
-            // 
-            this.labelTitle.AutoSize = true;
-            this.labelTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTitle.Location = new System.Drawing.Point(83, 53);
-            this.labelTitle.Name = "labelTitle";
-            this.labelTitle.Size = new System.Drawing.Size(40, 13);
-            this.labelTitle.TabIndex = 7;
-            this.labelTitle.Text = "Title :";
-            this.labelTitle.Click += new System.EventHandler(this.labelOrderID_Click);
             // 
             // labelFromDate
             // 
             this.labelFromDate.AutoSize = true;
             this.labelFromDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelFromDate.Location = new System.Drawing.Point(83, 98);
+            this.labelFromDate.Location = new System.Drawing.Point(83, 55);
             this.labelFromDate.Name = "labelFromDate";
             this.labelFromDate.Size = new System.Drawing.Size(73, 13);
             this.labelFromDate.TabIndex = 9;
@@ -83,7 +63,7 @@
             // 
             this.labelToDate.AutoSize = true;
             this.labelToDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelToDate.Location = new System.Drawing.Point(83, 142);
+            this.labelToDate.Location = new System.Drawing.Point(83, 99);
             this.labelToDate.Name = "labelToDate";
             this.labelToDate.Size = new System.Drawing.Size(61, 13);
             this.labelToDate.TabIndex = 11;
@@ -128,9 +108,9 @@
             // 
             // txtTotalStockCount
             // 
-            this.txtTotalStockCount.Location = new System.Drawing.Point(426, 158);
+            this.txtTotalStockCount.Location = new System.Drawing.Point(44, 135);
             this.txtTotalStockCount.Name = "txtTotalStockCount";
-            this.txtTotalStockCount.Size = new System.Drawing.Size(278, 20);
+            this.txtTotalStockCount.Size = new System.Drawing.Size(278, 23);
             this.txtTotalStockCount.TabIndex = 18;
             this.txtTotalStockCount.TextChanged += new System.EventHandler(this.txtTotalStockCount_TextChanged);
             // 
@@ -138,7 +118,7 @@
             // 
             this.labelStockCount.AutoSize = true;
             this.labelStockCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelStockCount.Location = new System.Drawing.Point(423, 142);
+            this.labelStockCount.Location = new System.Drawing.Point(41, 119);
             this.labelStockCount.Name = "labelStockCount";
             this.labelStockCount.Size = new System.Drawing.Size(118, 13);
             this.labelStockCount.TabIndex = 17;
@@ -146,7 +126,7 @@
             // 
             // dtpFromDate
             // 
-            this.dtpFromDate.Location = new System.Drawing.Point(86, 114);
+            this.dtpFromDate.Location = new System.Drawing.Point(86, 71);
             this.dtpFromDate.Name = "dtpFromDate";
             this.dtpFromDate.Size = new System.Drawing.Size(278, 20);
             this.dtpFromDate.TabIndex = 19;
@@ -154,7 +134,7 @@
             // 
             // dtpToDate
             // 
-            this.dtpToDate.Location = new System.Drawing.Point(86, 158);
+            this.dtpToDate.Location = new System.Drawing.Point(86, 115);
             this.dtpToDate.Name = "dtpToDate";
             this.dtpToDate.Size = new System.Drawing.Size(278, 20);
             this.dtpToDate.TabIndex = 20;
@@ -218,6 +198,7 @@
             // 
             // dgvReports
             // 
+            this.dgvReports.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvReports.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvReports.Location = new System.Drawing.Point(42, 274);
             this.dgvReports.Name = "dgvReports";
@@ -227,6 +208,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtTotalStockCount);
+            this.groupBox1.Controls.Add(this.labelStockCount);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(42, 25);
             this.groupBox1.Name = "groupBox1";
@@ -247,30 +230,26 @@
             this.Controls.Add(this.btnSalesReport);
             this.Controls.Add(this.dtpToDate);
             this.Controls.Add(this.dtpFromDate);
-            this.Controls.Add(this.txtTotalStockCount);
-            this.Controls.Add(this.labelStockCount);
             this.Controls.Add(this.txtTotalOrders);
             this.Controls.Add(this.labelTotalOrders);
             this.Controls.Add(this.txtTotalSales);
             this.Controls.Add(this.labelTotalsales);
             this.Controls.Add(this.labelToDate);
             this.Controls.Add(this.labelFromDate);
-            this.Controls.Add(this.txtTitle);
-            this.Controls.Add(this.labelTitle);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AdminReportsForm";
             this.Text = "AdminReportsForm";
             this.Load += new System.EventHandler(this.AdminReportsForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvReports)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.TextBox txtTitle;
-        private System.Windows.Forms.Label labelTitle;
         private System.Windows.Forms.Label labelFromDate;
         private System.Windows.Forms.Label labelToDate;
         private System.Windows.Forms.TextBox txtTotalSales;
