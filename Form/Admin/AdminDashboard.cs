@@ -14,9 +14,13 @@ namespace SmartMedPharmacy.Forms
 {
     public partial class AdminDashboard : Form
     {
+        private Timer clockTimer = new Timer();
+
         public AdminDashboard()
         {
             InitializeComponent();
+            LoadUserDetails();
+            InitializeClock();
         }
 
         private void LoadForm(Form childForm)
@@ -60,6 +64,34 @@ namespace SmartMedPharmacy.Forms
         private void btnManageOrders_Click(object sender, EventArgs e)
         {
             LoadForm(new AdminManageOrdersForm());
+        }
+
+        private void LoadUserDetails()
+        {
+            if (Session.CurrentUser != null)
+            {
+                lblWelcomeTitle.Text = $"Welcome {Session.CurrentUser.Email} !";
+            }
+            else
+            {
+                lblWelcomeTitle.Text = "Welcome";
+            }
+        }
+
+        private void InitializeClock()
+        {
+            clockTimer.Interval = 1000;
+
+            clockTimer.Tick += (s, e) =>
+            {
+                lblTime.Text = DateTime.Now.ToString("hh:mm:ss tt");
+                lblDate.Text = DateTime.Now.ToString("dddd, dd MMMM yyyy");
+            };
+
+            lblTime.Text = DateTime.Now.ToString("hh:mm:ss tt");
+            lblDate.Text = DateTime.Now.ToString("dddd, dd MMMM yyyy");
+
+            clockTimer.Start();
         }
 
         private void label1_Click_1(object sender, EventArgs e)

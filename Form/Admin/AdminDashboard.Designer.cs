@@ -48,11 +48,11 @@
             this.lblWelcomeTitle = new System.Windows.Forms.Label();
             this.lblDate = new System.Windows.Forms.Label();
             this.AdminMainPanel = new System.Windows.Forms.Panel();
+            this.chart2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.labelActiveOrders = new System.Windows.Forms.Label();
             this.labelMedicineCount = new System.Windows.Forms.Label();
             this.labelTotalSales = new System.Windows.Forms.Label();
-            this.chart2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.AdminPannelSidebar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.AdminPanelHeader.SuspendLayout();
@@ -239,39 +239,6 @@
             this.AdminMainPanel.TabIndex = 3;
             this.AdminMainPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.AdminMainPanel_Paint);
             // 
-            // labelActiveOrders
-            // 
-            this.labelActiveOrders.AutoSize = true;
-            this.labelActiveOrders.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelActiveOrders.Location = new System.Drawing.Point(496, 42);
-            this.labelActiveOrders.Name = "labelActiveOrders";
-            this.labelActiveOrders.Size = new System.Drawing.Size(100, 15);
-            this.labelActiveOrders.TabIndex = 9;
-            this.labelActiveOrders.Text = "Active Orders -";
-            this.labelActiveOrders.Click += new System.EventHandler(this.labelActiveOrders_Click);
-            // 
-            // labelMedicineCount
-            // 
-            this.labelMedicineCount.AutoSize = true;
-            this.labelMedicineCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelMedicineCount.Location = new System.Drawing.Point(247, 42);
-            this.labelMedicineCount.Name = "labelMedicineCount";
-            this.labelMedicineCount.Size = new System.Drawing.Size(119, 15);
-            this.labelMedicineCount.TabIndex = 8;
-            this.labelMedicineCount.Text = "Medcines Count -";
-            this.labelMedicineCount.Click += new System.EventHandler(this.labelMedicineCount_Click);
-            // 
-            // labelTotalSales
-            // 
-            this.labelTotalSales.AutoSize = true;
-            this.labelTotalSales.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTotalSales.Location = new System.Drawing.Point(48, 42);
-            this.labelTotalSales.Name = "labelTotalSales";
-            this.labelTotalSales.Size = new System.Drawing.Size(88, 15);
-            this.labelTotalSales.TabIndex = 7;
-            this.labelTotalSales.Text = "Total Sales -";
-            this.labelTotalSales.Click += new System.EventHandler(this.labelTotalSales_Click);
-            // 
             // chart2
             // 
             chartArea1.Name = "ChartArea1";
@@ -304,6 +271,39 @@
             this.chart1.Size = new System.Drawing.Size(300, 300);
             this.chart1.TabIndex = 5;
             this.chart1.Text = "chart1";
+            // 
+            // labelActiveOrders
+            // 
+            this.labelActiveOrders.AutoSize = true;
+            this.labelActiveOrders.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelActiveOrders.Location = new System.Drawing.Point(496, 42);
+            this.labelActiveOrders.Name = "labelActiveOrders";
+            this.labelActiveOrders.Size = new System.Drawing.Size(100, 15);
+            this.labelActiveOrders.TabIndex = 9;
+            this.labelActiveOrders.Text = "Active Orders -";
+            this.labelActiveOrders.Click += new System.EventHandler(this.labelActiveOrders_Click);
+            // 
+            // labelMedicineCount
+            // 
+            this.labelMedicineCount.AutoSize = true;
+            this.labelMedicineCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelMedicineCount.Location = new System.Drawing.Point(247, 42);
+            this.labelMedicineCount.Name = "labelMedicineCount";
+            this.labelMedicineCount.Size = new System.Drawing.Size(119, 15);
+            this.labelMedicineCount.TabIndex = 8;
+            this.labelMedicineCount.Text = "Medcines Count -";
+            this.labelMedicineCount.Click += new System.EventHandler(this.labelMedicineCount_Click);
+            // 
+            // labelTotalSales
+            // 
+            this.labelTotalSales.AutoSize = true;
+            this.labelTotalSales.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTotalSales.Location = new System.Drawing.Point(48, 42);
+            this.labelTotalSales.Name = "labelTotalSales";
+            this.labelTotalSales.Size = new System.Drawing.Size(88, 15);
+            this.labelTotalSales.TabIndex = 7;
+            this.labelTotalSales.Text = "Total Sales -";
+            this.labelTotalSales.Click += new System.EventHandler(this.labelTotalSales_Click);
             // 
             // AdminDashboard
             // 
