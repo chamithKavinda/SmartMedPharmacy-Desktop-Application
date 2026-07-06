@@ -49,7 +49,7 @@
             // 
             // AdminPannelSidebar
             // 
-            this.AdminPannelSidebar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.AdminPannelSidebar.BackColor = System.Drawing.Color.Lavender;
             this.AdminPannelSidebar.Controls.Add(this.pictureBox1);
             this.AdminPannelSidebar.Controls.Add(this.btnLogout);
             this.AdminPannelSidebar.Controls.Add(this.btnManageCustomers);
@@ -166,7 +166,7 @@
             // 
             // AdminPanelHeader
             // 
-            this.AdminPanelHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.AdminPanelHeader.BackColor = System.Drawing.Color.Lavender;
             this.AdminPanelHeader.Controls.Add(this.lblTime);
             this.AdminPanelHeader.Controls.Add(this.lblWelcomeTitle);
             this.AdminPanelHeader.Controls.Add(this.lblDate);

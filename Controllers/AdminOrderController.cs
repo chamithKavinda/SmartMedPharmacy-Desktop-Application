@@ -37,5 +37,21 @@ namespace SmartMedPharmacy.Controller
         {
             return repository.GetOrderMedicines(orderId);
         }
+
+        // Dashboard Statistics
+        public int GetNewOrdersCount()
+        {
+            return repository.GetNewOrdersCount();
+        }
+
+        public decimal GetTodaysRevenue()
+        {
+            return repository.GetTodaysRevenue();
+        }
+
+        public int GetLowStockCount()
+        {
+            return repository.GetLowStockCount();
+        }
     }
 }

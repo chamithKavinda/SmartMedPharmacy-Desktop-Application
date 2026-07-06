@@ -200,6 +200,58 @@ namespace SmartMedPharmacy.Repository
             }
             return medicines;
         }
+
+        // ---------------- Get New Orders count for Admin Dashboard ----------------
+        public int GetNewOrdersCount()
+        {
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+                conn.Open();
+
+                string query = @"SELECT COUNT(*) 
+                         FROM Orders 
+                         WHERE Status <> 'Delivered'";
+
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+
+                return Convert.ToInt32(cmd.ExecuteScalar());
+            }
+        }
+
+        // ---------------- Get Today Revenue Amount for Admin Dashboard ----------------
+        public decimal GetTodaysRevenue()
+        {
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+                conn.Open();
+
+                string query = @"SELECT IFNULL(SUM(TotalAmount),0)
+                         FROM Orders
+                         WHERE DATE(OrderDate)=CURDATE()
+                         AND Status='Delivered'";
+
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+
+                return Convert.ToDecimal(cmd.ExecuteScalar());
+            }
+        }
+
+        // ---------------- Get Today Revenue Amount for Admin Dashboard ----------------
+        public int GetLowStockCount()
+        {
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+                conn.Open();
+
+                string query = @"SELECT COUNT(*)
+                         FROM Medicines
+                         WHERE Stock <= 10";
+
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+
+                return Convert.ToInt32(cmd.ExecuteScalar());
+            }
+        }
     }
 
 
