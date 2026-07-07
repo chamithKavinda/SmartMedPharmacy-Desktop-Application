@@ -10,6 +10,11 @@ namespace SmartMedPharmacy.Controller
 
         public DataTable GetSalesReport(DateTime from, DateTime to)
         {
+            if (!ValidateDateRange(from, to))
+            {
+                return null;
+            }
+
             return reportRepository.GetSalesReport(from, to);
         }
 
@@ -25,11 +30,19 @@ namespace SmartMedPharmacy.Controller
 
         public decimal GetTotalSales(DateTime from, DateTime to)
         {
+            if (!ValidateDateRange(from, to))
+            {
+                return 0;
+            }
             return reportRepository.GetTotalSales(from, to);
         }
 
         public int GetTotalOrders(DateTime from, DateTime to)
         {
+            if (!ValidateDateRange(from, to))
+            {
+                return 0;
+            }
             return reportRepository.GetTotalOrders(from, to);
         }
 
@@ -38,5 +51,18 @@ namespace SmartMedPharmacy.Controller
             return reportRepository.GetTotalStock();
         }
 
+        private bool ValidateDateRange(DateTime from, DateTime to)
+        {
+            if (from > to)
+            {
+                return false;
+            }
+
+            if (to > DateTime.Now)
+            {
+                return false;
+            }
+            return true;
+        }
     }
 }
