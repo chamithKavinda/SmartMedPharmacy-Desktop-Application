@@ -193,5 +193,25 @@ namespace SmartMedPharmacy.Data
 
             return null;
         }
+
+        // ---------------- Duplicate Email Checking  ----------------
+        public bool EmailExistsForAnotherUser(string email, string mobileNumber)
+        {
+            string query = @"SELECT COUNT(*)
+                     FROM Users
+                     WHERE Email = @Email
+                     AND MobileNumber <> @MobileNumber";
+
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            using (MySqlCommand cmd = new MySqlCommand(query, conn))
+            {
+                cmd.Parameters.AddWithValue("@Email", email);
+                cmd.Parameters.AddWithValue("@MobileNumber", mobileNumber);
+
+                conn.Open();
+
+                return Convert.ToInt32(cmd.ExecuteScalar()) > 0;
+            }
+        }
     }
 }

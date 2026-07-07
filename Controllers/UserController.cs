@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text.RegularExpressions;
 using SmartMedPharmacy.Data;
 using SmartMedPharmacy.Models;
 using SmartMedPharmacy.Utill;
@@ -15,20 +17,57 @@ namespace SmartMedPharmacy.Controller
             _userRepository = new UserRepository();
         }
 
-        // ---------------- Save User ----------------
-        public string Register(string mobileNumber, string email,string address, string password, string role)
+        // ---------------- Register User ----------------
+        public string Register(string mobileNumber, string email,
+                               string address, string password, string role)
         {
             if (string.IsNullOrWhiteSpace(mobileNumber))
                 return "Mobile Number is required.";
 
-            if (string.IsNullOrWhiteSpace(email) || !email.Contains("@"))
-                return "Invalid Email.";
+            if (mobileNumber.Length != 10)
+                return "Mobile Number must contain exactly 10 digits.";
+
+            if (!mobileNumber.All(char.IsDigit))
+                return "Mobile Number must contain only numbers.";
+
+            if (string.IsNullOrWhiteSpace(email))
+                return "Email is required.";
+
+            string emailPattern = @"^[^@\s]+@[^@\s]+\.[^@\s]+$";
+
+            if (!Regex.IsMatch(email, emailPattern))
+                return "Invalid Email Address.";
 
             if (string.IsNullOrWhiteSpace(address))
                 return "Address is required.";
 
-            if (string.IsNullOrWhiteSpace(password) || password.Length < 6)
-                return "Password must be at least 6 characters.";
+            if (address.Trim().Length < 5)
+                return "Address is too short.";
+
+            if (string.IsNullOrWhiteSpace(password))
+                return "Password is required.";
+
+            if (password.Length < 8)
+                return "Password must be at least 8 characters.";
+
+            if (!password.Any(char.IsUpper))
+                return "Password must contain at least one uppercase letter.";
+
+            if (!password.Any(char.IsLower))
+                return "Password must contain at least one lowercase letter.";
+
+            if (!password.Any(char.IsDigit))
+                return "Password must contain at least one number.";
+
+            if (string.IsNullOrWhiteSpace(role))
+                return "Role is required.";
+
+            if (role != "Admin" &&
+                role != "Customer" &&
+                role != "Pharmacist")
+            {
+                return "Invalid role selected.";
+            }
 
             if (_userRepository.MobileNumberExists(mobileNumber))
                 return "Mobile Number already exists.";
@@ -50,7 +89,7 @@ namespace SmartMedPharmacy.Controller
             return success ? null : "Registration failed.";
         }
 
-        // ---------------- get All Users ----------------
+        // ---------------- Get All Users ----------------
         public List<User> GetAllUsers()
         {
             return _userRepository.GetAllUsers();
@@ -59,30 +98,75 @@ namespace SmartMedPharmacy.Controller
         // ---------------- Search User ----------------
         public User GetUserByMobile(string mobileNumber)
         {
+            if (string.IsNullOrWhiteSpace(mobileNumber))
+                return null;
+
             return _userRepository.GetUserByMobile(mobileNumber);
         }
 
         // ---------------- Update User ----------------
-        public string UpdateUser(string mobileNumber, string email, string address, string password, string role, bool passwordChanged
-        )
+        public string UpdateUser(string mobileNumber,
+                                 string email,
+                                 string address,
+                                 string password,
+                                 string role,
+                                 bool passwordChanged)
         {
-            User existingUser = _userRepository.GetUserByMobile(mobileNumber);
+            User existingUser =
+                _userRepository.GetUserByMobile(mobileNumber);
 
             if (existingUser == null)
                 return "User not found.";
 
-            if (string.IsNullOrWhiteSpace(email) || !email.Contains("@"))
-                return "Invalid Email.";
+            if (string.IsNullOrWhiteSpace(email))
+                return "Email is required.";
+
+            string emailPattern = @"^[^@\s]+@[^@\s]+\.[^@\s]+$";
+
+            if (!Regex.IsMatch(email, emailPattern))
+                return "Invalid Email Address.";
+
+            if (_userRepository.EmailExistsForAnotherUser(email, mobileNumber))
+                return "Email already exists.";
 
             if (string.IsNullOrWhiteSpace(address))
                 return "Address is required.";
 
-            string finalPassword;
+            if (address.Trim().Length < 5)
+                return "Address is too short.";
+
+            if (string.IsNullOrWhiteSpace(role))
+                return "Role is required.";
+
+            if (role != "Admin" &&
+                role != "Customer" &&
+                role != "Pharmacist")
+            {
+                return "Invalid role selected.";
+            }
+
+            string finalPassword = existingUser.Password;
 
             if (passwordChanged)
-                finalPassword = PasswordHasher.HashPassword(password);
-            else
-                finalPassword = password;  
+            {
+                if (string.IsNullOrWhiteSpace(password))
+                    return "Password is required.";
+
+                if (password.Length < 8)
+                    return "Password must be at least 8 characters.";
+
+                if (!password.Any(char.IsUpper))
+                    return "Password must contain at least one uppercase letter.";
+
+                if (!password.Any(char.IsLower))
+                    return "Password must contain at least one lowercase letter.";
+
+                if (!password.Any(char.IsDigit))
+                    return "Password must contain at least one number.";
+
+                finalPassword =
+                    PasswordHasher.HashPassword(password);
+            }
 
             User updatedUser = new User
             {
@@ -93,7 +177,8 @@ namespace SmartMedPharmacy.Controller
                 Role = role
             };
 
-            bool success = _userRepository.UpdateUser(updatedUser);
+            bool success =
+                _userRepository.UpdateUser(updatedUser);
 
             return success ? null : "Update failed.";
         }
@@ -104,25 +189,37 @@ namespace SmartMedPharmacy.Controller
             if (string.IsNullOrWhiteSpace(mobileNumber))
                 return "Mobile Number is required.";
 
-            User existingUser = _userRepository.GetUserByMobile(mobileNumber);
+            User existingUser =
+                _userRepository.GetUserByMobile(mobileNumber);
 
             if (existingUser == null)
                 return "User not found.";
 
-            bool success = _userRepository.DeleteUser(mobileNumber);
+            bool success =
+                _userRepository.DeleteUser(mobileNumber);
 
             return success ? null : "Delete failed.";
         }
 
-
-        // ---------------- User Logging Credential Checking ----------------
+        // ---------------- Login ----------------
         public User Login(string mobileNumber, string password)
         {
-            string hashedPassword = PasswordHasher.HashPassword(password);
+            if (string.IsNullOrWhiteSpace(mobileNumber))
+                return null;
 
-            User user = _userRepository.Login(mobileNumber, hashedPassword);
+            if (mobileNumber.Length != 10)
+                return null;
 
-            return user;
+            if (!mobileNumber.All(char.IsDigit))
+                return null;
+
+            if (string.IsNullOrWhiteSpace(password))
+                return null;
+
+            string hashedPassword =
+                PasswordHasher.HashPassword(password);
+
+            return _userRepository.Login(mobileNumber, hashedPassword);
         }
     }
 }
