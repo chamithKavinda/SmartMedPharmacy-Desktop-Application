@@ -90,5 +90,28 @@ namespace SmartMedPharmacy.Repository
                 return rows > 0;
             }
         }
+
+        // ---------------- Get Active Orders count for Customer Dashboard ----------------
+        public int GetActiveOrdersCount(string mobile)
+        {
+            int count = 0;
+
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+                conn.Open();
+
+                string query = @"SELECT COUNT(*) 
+                         FROM Orders
+                         WHERE CustomerMobile=@mobile
+                         AND Status <> 'Delivered'";
+
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@mobile", mobile);
+
+                count = Convert.ToInt32(cmd.ExecuteScalar());
+            }
+
+            return count;
+        }
     }
 }

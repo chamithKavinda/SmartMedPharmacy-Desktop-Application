@@ -34,10 +34,10 @@
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.groupBoxNewOrders = new System.Windows.Forms.GroupBox();
-            this.groupBoxLowStockAerts = new System.Windows.Forms.GroupBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.NewOrderLabel = new System.Windows.Forms.Label();
+            this.groupBoxLowStockAerts = new System.Windows.Forms.GroupBox();
             this.LowStockAlertsLabel = new System.Windows.Forms.Label();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.todaysRevenueLabel = new System.Windows.Forms.Label();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -62,6 +62,17 @@
             this.groupBoxNewOrders.Text = "New Orders ";
             this.groupBoxNewOrders.Enter += new System.EventHandler(this.groupBoxNewOrders_Enter);
             // 
+            // NewOrderLabel
+            // 
+            this.NewOrderLabel.AutoSize = true;
+            this.NewOrderLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NewOrderLabel.Location = new System.Drawing.Point(55, 42);
+            this.NewOrderLabel.Name = "NewOrderLabel";
+            this.NewOrderLabel.Size = new System.Drawing.Size(85, 29);
+            this.NewOrderLabel.TabIndex = 0;
+            this.NewOrderLabel.Text = "label1";
+            this.NewOrderLabel.Click += new System.EventHandler(this.NewOrderLabel_Click);
+            // 
             // groupBoxLowStockAerts
             // 
             this.groupBoxLowStockAerts.Controls.Add(this.LowStockAlertsLabel);
@@ -74,6 +85,17 @@
             this.groupBoxLowStockAerts.Text = "Low Stock Alerts";
             this.groupBoxLowStockAerts.Enter += new System.EventHandler(this.groupBoxLowStockAerts_Enter);
             // 
+            // LowStockAlertsLabel
+            // 
+            this.LowStockAlertsLabel.AutoSize = true;
+            this.LowStockAlertsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LowStockAlertsLabel.Location = new System.Drawing.Point(63, 42);
+            this.LowStockAlertsLabel.Name = "LowStockAlertsLabel";
+            this.LowStockAlertsLabel.Size = new System.Drawing.Size(85, 29);
+            this.LowStockAlertsLabel.TabIndex = 1;
+            this.LowStockAlertsLabel.Text = "label1";
+            this.LowStockAlertsLabel.Click += new System.EventHandler(this.LowStockAlertsLabel_Click);
+            // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.todaysRevenueLabel);
@@ -84,28 +106,6 @@
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Today\'s Revenue";
-            // 
-            // NewOrderLabel
-            // 
-            this.NewOrderLabel.AutoSize = true;
-            this.NewOrderLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NewOrderLabel.Location = new System.Drawing.Point(49, 42);
-            this.NewOrderLabel.Name = "NewOrderLabel";
-            this.NewOrderLabel.Size = new System.Drawing.Size(85, 29);
-            this.NewOrderLabel.TabIndex = 0;
-            this.NewOrderLabel.Text = "label1";
-            this.NewOrderLabel.Click += new System.EventHandler(this.NewOrderLabel_Click);
-            // 
-            // LowStockAlertsLabel
-            // 
-            this.LowStockAlertsLabel.AutoSize = true;
-            this.LowStockAlertsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LowStockAlertsLabel.Location = new System.Drawing.Point(52, 42);
-            this.LowStockAlertsLabel.Name = "LowStockAlertsLabel";
-            this.LowStockAlertsLabel.Size = new System.Drawing.Size(85, 29);
-            this.LowStockAlertsLabel.TabIndex = 1;
-            this.LowStockAlertsLabel.Text = "label1";
-            this.LowStockAlertsLabel.Click += new System.EventHandler(this.LowStockAlertsLabel_Click);
             // 
             // todaysRevenueLabel
             // 
