@@ -1,4 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
+using SmartMedPharmacy.Data;
 using SmartMedPharmacy.Models;
 using System;
 using System.Collections.Generic;
@@ -7,19 +8,13 @@ namespace SmartMedPharmacy.Repository
 {
     public class PlaceOrderRepository
     {
-        private string connectionString =
-            "Server=localhost;Database=SmartMedPharmacy;Uid=root;Pwd=CK13;";
-
         // ---------------- Confirm Order ----------------
         public bool SaveOrder(Order order)
         {
-            using (MySqlConnection conn =
-                new MySqlConnection(connectionString))
+            using (MySqlConnection conn = DatabaseConnection.GetConnection())
             {
                 conn.Open();
-
-                MySqlTransaction transaction =
-                    conn.BeginTransaction();
+                MySqlTransaction transaction = conn.BeginTransaction();
 
                 try
                 {

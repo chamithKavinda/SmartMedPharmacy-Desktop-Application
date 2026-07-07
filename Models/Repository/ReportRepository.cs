@@ -1,4 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
+using SmartMedPharmacy.Data;
 using System;
 using System.Data;
 
@@ -6,15 +7,12 @@ namespace SmartMedPharmacy.Repository
 {
     public class ReportRepository
     {
-        private string connectionString =
-            "Server=localhost;Database=SmartMedPharmacy;Uid=root;Pwd=CK13;";
-
         // Sales Report
         public DataTable GetSalesReport(DateTime from, DateTime to)
         {
             DataTable table = new DataTable();
 
-            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            using (MySqlConnection conn = DatabaseConnection.GetConnection())
             {
                 conn.Open();
 
@@ -43,7 +41,7 @@ namespace SmartMedPharmacy.Repository
         {
             DataTable table = new DataTable();
 
-            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            using (MySqlConnection conn = DatabaseConnection.GetConnection())
             {
                 conn.Open();
 
@@ -71,7 +69,7 @@ namespace SmartMedPharmacy.Repository
         {
             DataTable table = new DataTable();
 
-            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            using (MySqlConnection conn = DatabaseConnection.GetConnection())
             {
                 conn.Open();
 
@@ -95,8 +93,7 @@ namespace SmartMedPharmacy.Repository
 
         public decimal GetTotalSales(DateTime from, DateTime to)
         {
-            using (MySqlConnection conn =
-                new MySqlConnection(connectionString))
+            using (MySqlConnection conn = DatabaseConnection.GetConnection())
             {
                 conn.Open();
 
@@ -116,8 +113,7 @@ namespace SmartMedPharmacy.Repository
 
         public int GetTotalOrders(DateTime from, DateTime to)
         {
-            using (MySqlConnection conn =
-                new MySqlConnection(connectionString))
+            using (MySqlConnection conn = DatabaseConnection.GetConnection())
             {
                 conn.Open();
 
@@ -137,8 +133,7 @@ namespace SmartMedPharmacy.Repository
 
         public int GetTotalStock()
         {
-            using (MySqlConnection conn =
-                new MySqlConnection(connectionString))
+            using (MySqlConnection conn = DatabaseConnection.GetConnection())
             {
                 conn.Open();
 

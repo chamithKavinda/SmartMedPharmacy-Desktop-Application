@@ -1,4 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
+using SmartMedPharmacy.Data;
 using SmartMedPharmacy.Models;
 using System;
 using System.Collections.Generic;
@@ -7,16 +8,12 @@ namespace SmartMedPharmacy.Repository
 {
     public class AdminOrderRepository
     {
-        private string connectionString =
-            "Server=localhost;Database=SmartMedPharmacy;Uid=root;Pwd=CK13;";
-
         // ---------------- Get All Orders ----------------
         public List<Order> GetAllOrders()
         {
             List<Order> orders = new List<Order>();
 
-            using (MySqlConnection conn =
-                new MySqlConnection(connectionString))
+            using (MySqlConnection conn = DatabaseConnection.GetConnection())
             {
                 conn.Open();
 
@@ -47,7 +44,7 @@ namespace SmartMedPharmacy.Repository
         // ---------------- Update Admin Order ----------------
         public bool UpdateOrderStatus(int orderId, string status)
         {
-            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            using (MySqlConnection conn = DatabaseConnection.GetConnection())
             {
                 conn.Open();
 
@@ -67,7 +64,7 @@ namespace SmartMedPharmacy.Repository
         // ---------------- Delete Order ----------------
         public bool DeleteOrder(int orderId)
         {
-            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            using (MySqlConnection conn = DatabaseConnection.GetConnection())
             {
                 conn.Open();
 
@@ -112,7 +109,7 @@ namespace SmartMedPharmacy.Repository
         {
             List<Order> orders = new List<Order>();
 
-            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            using (MySqlConnection conn = DatabaseConnection.GetConnection())
             {
                 conn.Open();
 
@@ -150,7 +147,7 @@ namespace SmartMedPharmacy.Repository
         // ---------------- Get Customer Email and Address ----------------
         public Tuple<string, string> GetCustomerDetails(string customerMobile)
         {
-            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            using (MySqlConnection conn = DatabaseConnection.GetConnection())
             {
                 conn.Open();
                 string query = "SELECT Email, Address FROM Users WHERE MobileNumber = @mobile LIMIT 1";
@@ -176,7 +173,7 @@ namespace SmartMedPharmacy.Repository
         {
             List<string> medicines = new List<string>();
 
-            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            using (MySqlConnection conn = DatabaseConnection.GetConnection())
             {
                 conn.Open();
 
@@ -204,7 +201,7 @@ namespace SmartMedPharmacy.Repository
         // ---------------- Get New Orders count for Admin Dashboard ----------------
         public int GetNewOrdersCount()
         {
-            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            using (MySqlConnection conn = DatabaseConnection.GetConnection())
             {
                 conn.Open();
 
@@ -221,7 +218,7 @@ namespace SmartMedPharmacy.Repository
         // ---------------- Get Today Revenue Amount for Admin Dashboard ----------------
         public decimal GetTodaysRevenue()
         {
-            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            using (MySqlConnection conn = DatabaseConnection.GetConnection())
             {
                 conn.Open();
 
@@ -239,7 +236,7 @@ namespace SmartMedPharmacy.Repository
         // ---------------- Get Today Revenue Amount for Admin Dashboard ----------------
         public int GetLowStockCount()
         {
-            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            using (MySqlConnection conn = DatabaseConnection.GetConnection())
             {
                 conn.Open();
 

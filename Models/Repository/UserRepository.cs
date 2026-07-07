@@ -8,8 +8,6 @@ namespace SmartMedPharmacy.Data
 {
     public class UserRepository
     {
-        private string connectionString =
-            "Server=localhost;Database=SmartMedPharmacy;Uid=root;Pwd=CK13;";
 
         // ---------------- Save User ----------------
         public bool RegisterUser(User user)
@@ -18,7 +16,7 @@ namespace SmartMedPharmacy.Data
                 (MobileNumber, Email, Address, Password, Role)
                 VALUES (@MobileNumber, @Email, @Address, @Password, @Role)";
 
-            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            using (MySqlConnection conn = DatabaseConnection.GetConnection())
             using (MySqlCommand cmd = new MySqlCommand(query, conn))
             {
                 cmd.Parameters.AddWithValue("@MobileNumber", user.MobileNumber);
@@ -39,7 +37,7 @@ namespace SmartMedPharmacy.Data
 
             string query = "SELECT * FROM Users";
 
-            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            using (MySqlConnection conn = DatabaseConnection.GetConnection())
             using (MySqlCommand cmd = new MySqlCommand(query, conn))
             {
                 conn.Open();
@@ -67,7 +65,7 @@ namespace SmartMedPharmacy.Data
         {
             string query = "SELECT * FROM Users WHERE MobileNumber = @MobileNumber";
 
-            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            using (MySqlConnection conn = DatabaseConnection.GetConnection())
             using (MySqlCommand cmd = new MySqlCommand(query, conn))
             {
                 cmd.Parameters.AddWithValue("@MobileNumber", mobileNumber);
@@ -102,7 +100,7 @@ namespace SmartMedPharmacy.Data
                 Role = @Role
                 WHERE MobileNumber = @MobileNumber";
 
-            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            using (MySqlConnection conn = DatabaseConnection.GetConnection())
             using (MySqlCommand cmd = new MySqlCommand(query, conn))
             {
                 cmd.Parameters.AddWithValue("@MobileNumber", user.MobileNumber);
@@ -121,7 +119,7 @@ namespace SmartMedPharmacy.Data
         {
             string query = "DELETE FROM Users WHERE MobileNumber = @MobileNumber";
 
-            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            using (MySqlConnection conn = DatabaseConnection.GetConnection())
             using (MySqlCommand cmd = new MySqlCommand(query, conn))
             {
                 cmd.Parameters.AddWithValue("@MobileNumber", mobileNumber);
@@ -136,7 +134,7 @@ namespace SmartMedPharmacy.Data
         {
             string query = "SELECT COUNT(*) FROM Users WHERE MobileNumber = @MobileNumber";
 
-            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            using (MySqlConnection conn = DatabaseConnection.GetConnection())
             using (MySqlCommand cmd = new MySqlCommand(query, conn))
             {
                 cmd.Parameters.AddWithValue("@MobileNumber", mobileNumber);
@@ -151,7 +149,7 @@ namespace SmartMedPharmacy.Data
         {
             string query = "SELECT COUNT(*) FROM Users WHERE Email = @Email";
 
-            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            using (MySqlConnection conn = DatabaseConnection.GetConnection())
             using (MySqlCommand cmd = new MySqlCommand(query, conn))
             {
                 cmd.Parameters.AddWithValue("@Email", email);
@@ -167,7 +165,7 @@ namespace SmartMedPharmacy.Data
         {
             string query = "SELECT * FROM Users WHERE MobileNumber = @MobileNumber AND Password = @Password";
 
-            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            using (MySqlConnection conn = DatabaseConnection.GetConnection())
             using (MySqlCommand cmd = new MySqlCommand(query, conn))
             {
                 cmd.Parameters.AddWithValue("@MobileNumber", mobileNumber);
@@ -202,7 +200,7 @@ namespace SmartMedPharmacy.Data
                      WHERE Email = @Email
                      AND MobileNumber <> @MobileNumber";
 
-            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            using (MySqlConnection conn = DatabaseConnection.GetConnection())
             using (MySqlCommand cmd = new MySqlCommand(query, conn))
             {
                 cmd.Parameters.AddWithValue("@Email", email);

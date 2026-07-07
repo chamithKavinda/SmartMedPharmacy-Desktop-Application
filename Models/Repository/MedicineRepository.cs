@@ -7,10 +7,6 @@ namespace SmartMedPharmacy.Data
 {
     public class MedicineRepository
     {
-        private string connectionString =
-            "Server=localhost;Database=SmartMedPharmacy;Uid=root;Pwd=CK13;";
-
-
         // ---------------- Save Medicine ----------------
         public bool SaveMedicine(Medicine medicine)
         {
@@ -19,7 +15,7 @@ namespace SmartMedPharmacy.Data
                 VALUES
                 (@Name, @Stock, @Category, @Supplier, @Price, @Dosage, @ExpiryDate)";
 
-            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            using (MySqlConnection conn = DatabaseConnection.GetConnection())
             using (MySqlCommand cmd = new MySqlCommand(query, conn))
             {
                 cmd.Parameters.AddWithValue("@Name", medicine.Name);
@@ -43,7 +39,7 @@ namespace SmartMedPharmacy.Data
 
             string query = "SELECT * FROM Medicines";
 
-            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            using (MySqlConnection conn = DatabaseConnection.GetConnection())
             using (MySqlCommand cmd = new MySqlCommand(query, conn))
             {
                 conn.Open();
@@ -76,7 +72,7 @@ namespace SmartMedPharmacy.Data
         {
             string query = "SELECT * FROM Medicines WHERE Name=@Name";
 
-            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            using (MySqlConnection conn = DatabaseConnection.GetConnection())
             using (MySqlCommand cmd = new MySqlCommand(query, conn))
             {
                 cmd.Parameters.AddWithValue("@Name", name);
@@ -118,7 +114,7 @@ namespace SmartMedPharmacy.Data
                             ExpiryDate=@ExpiryDate
                             WHERE Name=@Name";
 
-            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            using (MySqlConnection conn = DatabaseConnection.GetConnection())
             using (MySqlCommand cmd = new MySqlCommand(query, conn))
             {
                 cmd.Parameters.AddWithValue("@Name", medicine.Name);
@@ -140,7 +136,7 @@ namespace SmartMedPharmacy.Data
         {
             string query = "DELETE FROM Medicines WHERE Name=@Name";
 
-            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            using (MySqlConnection conn = DatabaseConnection.GetConnection())
             using (MySqlCommand cmd = new MySqlCommand(query, conn))
             {
                 cmd.Parameters.AddWithValue("@Name", name);

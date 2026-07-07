@@ -1,4 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
+using SmartMedPharmacy.Data;
 using SmartMedPharmacy.Models;
 using System;
 using System.Collections.Generic;
@@ -7,15 +8,11 @@ namespace SmartMedPharmacy.Repository
 {
     public class TrackOrderRepository
     {
-        private string connectionString =
-             "Server=localhost;Database=SmartMedPharmacy;Uid=root;Pwd=CK13;";
-
-
         public List<Order> GetCustomerOrders(string mobile)
         {
             List<Order> orders = new List<Order>();
 
-            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            using (MySqlConnection conn = DatabaseConnection.GetConnection())
             {
                 conn.Open();
 
@@ -75,7 +72,7 @@ namespace SmartMedPharmacy.Repository
         // ---------------- Delete Orders ----------------
         public bool CancelOrder(int orderId)
         {
-            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            using (MySqlConnection conn = DatabaseConnection.GetConnection())
             {
                 conn.Open();
 
@@ -96,7 +93,7 @@ namespace SmartMedPharmacy.Repository
         {
             int count = 0;
 
-            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            using (MySqlConnection conn = DatabaseConnection.GetConnection())
             {
                 conn.Open();
 
