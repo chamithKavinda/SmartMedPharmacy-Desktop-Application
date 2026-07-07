@@ -13,19 +13,40 @@ namespace SmartMedPharmacy.Forms.Customer
 {
     public partial class CustomerDashboard : Form
     {
-        //private string loggedUserEmail;
-        //private Timer timer = new Timer();
+        private Timer dashboardTimer;
         public CustomerDashboard()
         {
             InitializeComponent();
 
-            //loggedUserEmail = email;
-
-            //lblWelcomeTitle.Text = "Logging as " + loggedUserEmail;
+            if (Session.CurrentUser != null)
+            {
+                lblWelcomeTitle.Text = $"Welcome, {Session.CurrentUser.Email} !";
+            }
+            else
+            {
+                lblWelcomeTitle.Text = "Welcome, Guest !";
+            }
 
             LoadForm(new CustomerDashboardStatsForm());
 
-            //StartDateTime();
+            InitializeClock();
+        }
+
+        private void InitializeClock()
+        {
+            lblDate.Text = DateTime.Now.ToString("dddd, MMMM dd, yyyy"); 
+            lblTime.Text = DateTime.Now.ToString("hh:mm:ss tt");        
+
+            dashboardTimer = new Timer();
+            dashboardTimer.Interval = 1000;
+            dashboardTimer.Tick += DashboardTimer_Tick;
+            dashboardTimer.Start();
+        }
+
+        private void DashboardTimer_Tick(object sender, EventArgs e)
+        {
+            lblDate.Text = DateTime.Now.ToString("dddd, MMMM dd, yyyy");
+            lblTime.Text = DateTime.Now.ToString("hh:mm:ss tt");
         }
 
         private void LoadForm(Form childForm)
@@ -124,6 +145,12 @@ namespace SmartMedPharmacy.Forms.Customer
 
         private void btnLogout_Click(object sender, EventArgs e)
         {
+            if (dashboardTimer != null)
+            {
+                dashboardTimer.Stop();
+                dashboardTimer.Dispose();
+            }
+
             Session.CurrentUser = null;
             LoginForm login = new LoginForm();
             login.Show();
