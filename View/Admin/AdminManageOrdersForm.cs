@@ -44,37 +44,70 @@ namespace SmartMedPharmacy.Forms
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            int id = Convert.ToInt32(txtOrderID.Text);
 
-            string status = cmbOrderStatus.Text;
-
-            bool success =
-                controller.UpdateStatus(id, status);
-
-            if (success)
+            if (string.IsNullOrWhiteSpace(txtOrderID.Text))
             {
-                MessageBox.Show("Order Updated");
+                MessageBox.Show("Please select an order.");
+                return;
+            }
+
+            if (!int.TryParse(txtOrderID.Text, out int id))
+            {
+                MessageBox.Show("Invalid Order ID.");
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(cmbOrderStatus.Text))
+            {
+                MessageBox.Show("Please select order status.");
+                cmbOrderStatus.Focus();
+                return;
+            }
+
+            bool result = controller.UpdateStatus(id, cmbOrderStatus.Text);
+
+            if (result)
+            {
+                MessageBox.Show("Order updated successfully.");
 
                 LoadOrders();
             }
             else
             {
-                MessageBox.Show("Update Failed");
+                MessageBox.Show("Update failed.");
             }
+
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            int id = Convert.ToInt32(txtOrderID.Text);
-
-            bool success =
-                controller.DeleteOrder(id);
-
-            if (success)
+            if (string.IsNullOrWhiteSpace(txtOrderID.Text))
             {
-                MessageBox.Show("Oredr Deleted Successfully");
+                MessageBox.Show("Please select an order.");
+                return;
+            }
 
-                LoadOrders();
+            if (!int.TryParse(txtOrderID.Text, out int id))
+            {
+                MessageBox.Show("Invalid Order ID.");
+                return;
+            }
+
+            DialogResult answer = MessageBox.Show("Do you want to delete this order?","Confirm Delete",MessageBoxButtons.YesNo);
+
+            if (answer == DialogResult.Yes)
+            {
+                bool result = controller.DeleteOrder(id);
+
+                if (result)
+                {
+                    MessageBox.Show("Order deleted successfully.");
+                    LoadOrders();
+                }
+                else
+                {
+                    MessageBox.Show("Delete failed.");
+                }
             }
         }
 
@@ -90,18 +123,23 @@ namespace SmartMedPharmacy.Forms
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            var results = controller.SearchOrders(txtSearch.Text);
-
-            dgvManageOrders.DataSource = null;
-
-            if (results != null && results.Any())
+            if (string.IsNullOrWhiteSpace(txtSearch.Text))
             {
-                dgvManageOrders.AutoGenerateColumns = true;
-                dgvManageOrders.DataSource = results;
+                MessageBox.Show("Enter search value.");
+                txtSearch.Focus();
+                return;
+            }
+
+            var result = controller.SearchOrders(txtSearch.Text);
+
+            if (result.Count > 0)
+            {
+                dgvManageOrders.DataSource = result;
             }
             else
             {
-                MessageBox.Show("No orders found matching your search criteria.");
+                MessageBox.Show("No orders found.");
+
                 LoadOrders();
             }
         }
