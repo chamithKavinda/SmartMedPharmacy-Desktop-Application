@@ -107,88 +107,88 @@
     <Compile Include="Controllers\ReportController.cs" />
     <Compile Include="Controllers\TrackOrderController.cs" />
     <Compile Include="Controllers\UserController.cs" />
-    <Compile Include="Data\AdminOrderRepository.cs" />
-    <Compile Include="Data\MedicineRepository.cs" />
-    <Compile Include="Data\PlaceOrderRepository.cs" />
-    <Compile Include="Data\ReportRepository.cs" />
-    <Compile Include="Data\TrackOrderRepository.cs" />
-    <Compile Include="Data\UserRepository.cs" />
-    <Compile Include="Form\Admin\AdminDashboardStatsForm.cs">
+    <Compile Include="Models\Repository\AdminOrderRepository.cs" />
+    <Compile Include="Models\Repository\MedicineRepository.cs" />
+    <Compile Include="Models\Repository\PlaceOrderRepository.cs" />
+    <Compile Include="Models\Repository\ReportRepository.cs" />
+    <Compile Include="Models\Repository\TrackOrderRepository.cs" />
+    <Compile Include="Models\Repository\UserRepository.cs" />
+    <Compile Include="View\Admin\AdminDashboardStatsForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\Admin\AdminDashboardStatsForm.Designer.cs">
+    <Compile Include="View\Admin\AdminDashboardStatsForm.Designer.cs">
       <DependentUpon>AdminDashboardStatsForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\Customer\CustomerDashboardStatsForm.cs">
+    <Compile Include="View\Customer\CustomerDashboardStatsForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\Customer\CustomerDashboardStatsForm.Designer.cs">
+    <Compile Include="View\Customer\CustomerDashboardStatsForm.Designer.cs">
       <DependentUpon>CustomerDashboardStatsForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\Customer\CustomerTrackOrderForm.cs">
+    <Compile Include="View\Customer\CustomerTrackOrderForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\Customer\CustomerTrackOrderForm.Designer.cs">
+    <Compile Include="View\Customer\CustomerTrackOrderForm.Designer.cs">
       <DependentUpon>CustomerTrackOrderForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\Admin\AdminCustomerManageForm.cs">
+    <Compile Include="View\Admin\AdminCustomerManageForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\Admin\AdminCustomerManageForm.Designer.cs">
+    <Compile Include="View\Admin\AdminCustomerManageForm.Designer.cs">
       <DependentUpon>AdminCustomerManageForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\Admin\AdminDashboard.cs">
+    <Compile Include="View\Admin\AdminDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\Admin\AdminDashboard.Designer.cs">
+    <Compile Include="View\Admin\AdminDashboard.Designer.cs">
       <DependentUpon>AdminDashboard.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\Admin\AdminManageOrdersForm.cs">
+    <Compile Include="View\Admin\AdminManageOrdersForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\Admin\AdminManageOrdersForm.Designer.cs">
+    <Compile Include="View\Admin\AdminManageOrdersForm.Designer.cs">
       <DependentUpon>AdminManageOrdersForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\Admin\AdminMedicinesManageForm.cs">
+    <Compile Include="View\Admin\AdminMedicinesManageForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\Admin\AdminMedicinesManageForm.Designer.cs">
+    <Compile Include="View\Admin\AdminMedicinesManageForm.Designer.cs">
       <DependentUpon>AdminMedicinesManageForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\Admin\AdminReportsForm.cs">
+    <Compile Include="View\Admin\AdminReportsForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\Admin\AdminReportsForm.Designer.cs">
+    <Compile Include="View\Admin\AdminReportsForm.Designer.cs">
       <DependentUpon>AdminReportsForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\Customer\CustomerDashboard.cs">
+    <Compile Include="View\Customer\CustomerDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\Customer\CustomerDashboard.Designer.cs">
+    <Compile Include="View\Customer\CustomerDashboard.Designer.cs">
       <DependentUpon>CustomerDashboard.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\Customer\CustomerMedicineForm.cs">
+    <Compile Include="View\Customer\CustomerMedicineForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\Customer\CustomerMedicineForm.Designer.cs">
+    <Compile Include="View\Customer\CustomerMedicineForm.Designer.cs">
       <DependentUpon>CustomerMedicineForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\Customer\CustomerPlaceOrderForm.cs">
+    <Compile Include="View\Customer\CustomerPlaceOrderForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\Customer\CustomerPlaceOrderForm.Designer.cs">
+    <Compile Include="View\Customer\CustomerPlaceOrderForm.Designer.cs">
       <DependentUpon>CustomerPlaceOrderForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\Customer\CustomerProfileForm.cs">
+    <Compile Include="View\Customer\CustomerProfileForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\Customer\CustomerProfileForm.Designer.cs">
+    <Compile Include="View\Customer\CustomerProfileForm.Designer.cs">
       <DependentUpon>CustomerProfileForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\LoginForm.cs">
+    <Compile Include="View\LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\LoginForm.Designer.cs">
+    <Compile Include="View\LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
     <Compile Update="Forms\RegisterForm.cs">
@@ -197,65 +197,65 @@
     <Compile Update="Forms\RegisterForm.Designer.cs">
       <DependentUpon>RegisterForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Models\CartItem.cs" />
-    <Compile Include="Models\CartManager.cs" />
-    <Compile Include="Models\Medicine.cs" />
-    <Compile Include="Models\Order.cs" />
-    <Compile Include="Models\OrderItem.cs" />
+    <Compile Include="Models\Entity\CartItem.cs" />
+    <Compile Include="Models\Entity\CartManager.cs" />
+    <Compile Include="Models\Entity\Medicine.cs" />
+    <Compile Include="Models\Entity\Order.cs" />
+    <Compile Include="Models\Entity\OrderItem.cs" />
     <Compile Include="Utill\PasswordHasher.cs" />
     <Compile Include="Utill\Session.cs" />
     <EmbeddedResource Update="Forms\RegisterForm.resx">
       <DependentUpon>RegisterForm.cs</DependentUpon>
     </EmbeddedResource>
-    <Compile Include="Form\RegisterForm.cs">
+    <Compile Include="View\RegisterForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\RegisterForm.Designer.cs">
+    <Compile Include="View\RegisterForm.Designer.cs">
       <DependentUpon>RegisterForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Models\User.cs" />
+    <Compile Include="Models\Entity\User.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form\Admin\AdminDashboardStatsForm.resx">
+    <EmbeddedResource Include="View\Admin\AdminDashboardStatsForm.resx">
       <DependentUpon>AdminDashboardStatsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\Customer\CustomerDashboardStatsForm.resx">
+    <EmbeddedResource Include="View\Customer\CustomerDashboardStatsForm.resx">
       <DependentUpon>CustomerDashboardStatsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\Customer\CustomerTrackOrderForm.resx">
+    <EmbeddedResource Include="View\Customer\CustomerTrackOrderForm.resx">
       <DependentUpon>CustomerTrackOrderForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\Admin\AdminCustomerManageForm.resx">
+    <EmbeddedResource Include="View\Admin\AdminCustomerManageForm.resx">
       <DependentUpon>AdminCustomerManageForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\Admin\AdminDashboard.resx">
+    <EmbeddedResource Include="View\Admin\AdminDashboard.resx">
       <DependentUpon>AdminDashboard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\Admin\AdminManageOrdersForm.resx">
+    <EmbeddedResource Include="View\Admin\AdminManageOrdersForm.resx">
       <DependentUpon>AdminManageOrdersForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\Admin\AdminMedicinesManageForm.resx">
+    <EmbeddedResource Include="View\Admin\AdminMedicinesManageForm.resx">
       <DependentUpon>AdminMedicinesManageForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\Admin\AdminReportsForm.resx">
+    <EmbeddedResource Include="View\Admin\AdminReportsForm.resx">
       <DependentUpon>AdminReportsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\Customer\CustomerDashboard.resx">
+    <EmbeddedResource Include="View\Customer\CustomerDashboard.resx">
       <DependentUpon>CustomerDashboard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\Customer\CustomerMedicineForm.resx">
+    <EmbeddedResource Include="View\Customer\CustomerMedicineForm.resx">
       <DependentUpon>CustomerMedicineForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\Customer\CustomerPlaceOrderForm.resx">
+    <EmbeddedResource Include="View\Customer\CustomerPlaceOrderForm.resx">
       <DependentUpon>CustomerPlaceOrderForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\Customer\CustomerProfileForm.resx">
+    <EmbeddedResource Include="View\Customer\CustomerProfileForm.resx">
       <DependentUpon>CustomerProfileForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\LoginForm.resx">
+    <EmbeddedResource Include="View\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\RegisterForm.resx">
+    <EmbeddedResource Include="View\RegisterForm.resx">
       <DependentUpon>RegisterForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

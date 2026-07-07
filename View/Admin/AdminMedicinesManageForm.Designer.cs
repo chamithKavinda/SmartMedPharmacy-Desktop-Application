@@ -50,6 +50,7 @@
             this.dgvMedicines = new System.Windows.Forms.DataGridView();
             this.btnSearch = new System.Windows.Forms.Button();
             this.btnRefresh = new System.Windows.Forms.Button();
+            this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMedicines)).BeginInit();
             this.SuspendLayout();
             // 
@@ -198,7 +199,7 @@
             this.btnSave.BackColor = System.Drawing.Color.RoyalBlue;
             this.btnSave.FlatAppearance.BorderSize = 0;
             this.btnSave.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnSave.Location = new System.Drawing.Point(469, 196);
+            this.btnSave.Location = new System.Drawing.Point(417, 181);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 32);
             this.btnSave.TabIndex = 17;
@@ -211,7 +212,7 @@
             this.btnUpdate.BackColor = System.Drawing.Color.ForestGreen;
             this.btnUpdate.FlatAppearance.BorderSize = 0;
             this.btnUpdate.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnUpdate.Location = new System.Drawing.Point(553, 196);
+            this.btnUpdate.Location = new System.Drawing.Point(501, 181);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(75, 32);
             this.btnUpdate.TabIndex = 18;
@@ -224,7 +225,7 @@
             this.btnDelete.BackColor = System.Drawing.Color.Firebrick;
             this.btnDelete.FlatAppearance.BorderSize = 0;
             this.btnDelete.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnDelete.Location = new System.Drawing.Point(636, 196);
+            this.btnDelete.Location = new System.Drawing.Point(584, 181);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(75, 32);
             this.btnDelete.TabIndex = 19;
@@ -234,10 +235,13 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnDelete);
+            this.groupBox1.Controls.Add(this.btnSave);
+            this.groupBox1.Controls.Add(this.btnUpdate);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(51, 15);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(680, 228);
+            this.groupBox1.Size = new System.Drawing.Size(680, 232);
             this.groupBox1.TabIndex = 23;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Manage Medicine";
@@ -245,7 +249,7 @@
             // 
             // txtSearch
             // 
-            this.txtSearch.Location = new System.Drawing.Point(380, 266);
+            this.txtSearch.Location = new System.Drawing.Point(380, 269);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(205, 20);
             this.txtSearch.TabIndex = 20;
@@ -255,9 +259,9 @@
             // 
             this.dgvMedicines.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvMedicines.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMedicines.Location = new System.Drawing.Point(51, 297);
+            this.dgvMedicines.Location = new System.Drawing.Point(51, 302);
             this.dgvMedicines.Name = "dgvMedicines";
-            this.dgvMedicines.Size = new System.Drawing.Size(680, 153);
+            this.dgvMedicines.Size = new System.Drawing.Size(680, 148);
             this.dgvMedicines.TabIndex = 22;
             this.dgvMedicines.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMedicines_CellDoubleClick);
             // 
@@ -265,7 +269,7 @@
             // 
             this.btnSearch.BackColor = System.Drawing.Color.Goldenrod;
             this.btnSearch.FlatAppearance.BorderSize = 0;
-            this.btnSearch.Location = new System.Drawing.Point(591, 262);
+            this.btnSearch.Location = new System.Drawing.Point(591, 265);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(67, 28);
             this.btnSearch.TabIndex = 21;
@@ -278,7 +282,7 @@
             this.btnRefresh.BackColor = System.Drawing.Color.Peru;
             this.btnRefresh.FlatAppearance.BorderSize = 0;
             this.btnRefresh.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRefresh.Location = new System.Drawing.Point(664, 262);
+            this.btnRefresh.Location = new System.Drawing.Point(664, 265);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(67, 28);
             this.btnRefresh.TabIndex = 24;
@@ -296,9 +300,6 @@
             this.Controls.Add(this.dgvMedicines);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.txtSearch);
-            this.Controls.Add(this.btnDelete);
-            this.Controls.Add(this.btnUpdate);
-            this.Controls.Add(this.btnSave);
             this.Controls.Add(this.comboMedicineCategory);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.labelExpireDate);
@@ -317,6 +318,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AdminMedicinesManageForm";
             this.Text = "AdminMedicinesManageForm";
+            this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvMedicines)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
