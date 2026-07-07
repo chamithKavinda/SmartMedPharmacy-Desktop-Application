@@ -318,6 +318,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AdminMedicinesManageForm";
             this.Text = "AdminMedicinesManageForm";
+            this.Load += new System.EventHandler(this.AdminMedicinesManageForm_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvMedicines)).EndInit();
             this.ResumeLayout(false);

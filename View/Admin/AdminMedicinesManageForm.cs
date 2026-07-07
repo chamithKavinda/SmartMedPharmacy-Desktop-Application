@@ -25,75 +25,112 @@ namespace SmartMedPharmacy.Forms
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+
+            if (!ValidateMedicineInput())
+                return;
+
             string result = _medicineController.SaveMedicine(
                 txtName.Text,
-                int.Parse(txtStock.Text),
+                Convert.ToInt32(txtStock.Text),
                 comboMedicineCategory.Text,
                 txtSupplier.Text,
-                decimal.Parse(txtPrice.Text),
+                Convert.ToDecimal(txtPrice.Text),
                 txtDosage.Text,
                 dateTimePicker1.Value
             );
 
-            MessageBox.Show(result ?? "Medicine Saved Successfully");
-
             if (result == null)
             {
+                MessageBox.Show("Medicine saved successfully.");
                 ClearForm();
                 LoadMedicineData();
             }
-                
+            else
+            {
+                MessageBox.Show(result);
+            }
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
+            if (!ValidateMedicineInput())
+                return;
+
             string result = _medicineController.UpdateMedicine(
                 txtName.Text,
-                int.Parse(txtStock.Text),
+                Convert.ToInt32(txtStock.Text),
                 comboMedicineCategory.Text,
                 txtSupplier.Text,
-                decimal.Parse(txtPrice.Text),
+                Convert.ToDecimal(txtPrice.Text),
                 txtDosage.Text,
                 dateTimePicker1.Value
             );
 
-            MessageBox.Show(result ?? "Medicine Updated Successfully");
-
             if (result == null)
             {
+                MessageBox.Show("Medicine updated successfully.");
                 ClearForm();
                 LoadMedicineData();
             }
+            else
+            {
+                MessageBox.Show(result);
+            }
+
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            string result = _medicineController.DeleteMedicine(txtName.Text);
-
-            MessageBox.Show(result ?? "Medicine Deleted Successfully");
-
-            if (result == null)
+            if (string.IsNullOrWhiteSpace(txtName.Text))
             {
-                ClearForm();
-                LoadMedicineData();
+                MessageBox.Show("Select medicine first.");
+                return;
+            }
+
+            DialogResult result = MessageBox.Show(
+                "Are you sure you want to delete this medicine?",
+                "Confirm Delete",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Warning);
+
+            if (result == DialogResult.Yes)
+            {
+                string response = _medicineController.DeleteMedicine(txtName.Text);
+
+                if (response == null)
+                {
+                    MessageBox.Show("Medicine deleted successfully.");
+                    ClearForm();
+                    LoadMedicineData();
+                }
+                else
+                {
+                    MessageBox.Show(response);
+                }
             }
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(txtSearch.Text))
+            {
+                MessageBox.Show("Enter medicine name to search.");
+                txtSearch.Focus();
+                return;
+            }
+
             Medicine medicine = _medicineController.SearchMedicine(txtSearch.Text);
 
             if (medicine != null)
             {
                 List<Medicine> list = new List<Medicine>();
                 list.Add(medicine);
-
                 dgvMedicines.DataSource = null;
                 dgvMedicines.DataSource = list;
             }
             else
             {
-                MessageBox.Show("Medicine not found");
+                MessageBox.Show("Medicine not found.");
             }
         }
 
@@ -141,6 +178,74 @@ namespace SmartMedPharmacy.Forms
             LoadMedicineData();
 
             dgvMedicines.ClearSelection();
+        }
+
+        private bool ValidateMedicineInput()
+        {
+            if (string.IsNullOrWhiteSpace(txtName.Text))
+            {
+                MessageBox.Show("Enter medicine name.");
+                txtName.Focus();
+                return false;
+            }
+
+            if (!int.TryParse(txtStock.Text, out int stock))
+            {
+                MessageBox.Show("Enter valid stock quantity.");
+                txtStock.Focus();
+                return false;
+            }
+
+            if (stock < 0)
+            {
+                MessageBox.Show("Stock cannot be negative.");
+                txtStock.Focus();
+                return false;
+            }
+
+            if (string.IsNullOrWhiteSpace(comboMedicineCategory.Text))
+            {
+                MessageBox.Show("Select medicine category.");
+                comboMedicineCategory.Focus();
+                return false;
+            }
+
+            if (string.IsNullOrWhiteSpace(txtSupplier.Text))
+            {
+                MessageBox.Show("Enter supplier name.");
+                txtSupplier.Focus();
+                return false;
+            }
+
+            if (!decimal.TryParse(txtPrice.Text, out decimal price))
+            {
+                MessageBox.Show("Enter valid price.");
+                txtPrice.Focus();
+                return false;
+            }
+
+            if (price <= 0)
+            {
+                MessageBox.Show("Price must be greater than zero.");
+                txtPrice.Focus();
+                return false;
+            }
+
+            if (string.IsNullOrWhiteSpace(txtDosage.Text))
+            {
+                MessageBox.Show("Enter dosage.");
+                txtDosage.Focus();
+                return false;
+            }
+
+            if (dateTimePicker1.Value <= DateTime.Today)
+            {
+                MessageBox.Show("Expiry date must be future date.");
+                dateTimePicker1.Focus();
+                return false;
+            }
+
+            return true;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -211,6 +316,11 @@ namespace SmartMedPharmacy.Forms
         }
 
         private void maskedTextBox1_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
+        }
+
+        private void AdminMedicinesManageForm_Load(object sender, EventArgs e)
         {
 
         }
