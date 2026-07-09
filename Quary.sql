@@ -10,7 +10,7 @@ create table Users(
 	Role varchar(20) not null
 );
 
-insert into Users (MobileNumber, Email, Address, Password, Role) values ('0762106833', 'admin@gmail.com', 'Colombo', 'admin@123', 'Admin');
+insert into Users (MobileNumber, Email, Address, Password, Role) values ('0762106833', 'admin@gmail.com', 'Colombo', '7676aaafb027c825bd9abab78b234070e702752f625b752e55e55b48e607e358', 'Admin');
 
 
 create table Medicines (
@@ -50,7 +50,6 @@ CREATE TABLE OrderItems (
     FOREIGN KEY (MedicineId)
     REFERENCES Medicines(MedicineId)
 );
-
 
 
 
