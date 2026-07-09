@@ -118,5 +118,10 @@ namespace SmartMedPharmacy.Controller
 
             return success ? null : "Delete failed.";
         }
+
+        public List<Medicine> CheckExpiringMedicines(int daysThreshold = 30)
+        {
+            return _medicineRepository.GetExpiringMedicines(daysThreshold);
+        }
     }
 }

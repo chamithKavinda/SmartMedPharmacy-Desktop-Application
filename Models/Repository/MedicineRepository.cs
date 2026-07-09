@@ -145,5 +145,40 @@ namespace SmartMedPharmacy.Data
                 return cmd.ExecuteNonQuery() > 0;
             }
         }
+
+        // ---------------- Get Expiring/Expired Medicines ----------------
+        public List<Medicine> GetExpiringMedicines(int daysThreshold)
+        {
+            List<Medicine> medicines = new List<Medicine>();
+
+            string query = @"SELECT * FROM Medicines 
+                     WHERE ExpiryDate <= DATE_ADD(CURDATE(), INTERVAL @Days DAY)";
+
+            using (MySqlConnection conn = DatabaseConnection.GetConnection())
+            using (MySqlCommand cmd = new MySqlCommand(query, conn))
+            {
+                cmd.Parameters.AddWithValue("@Days", daysThreshold);
+                conn.Open();
+
+                using (MySqlDataReader reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        medicines.Add(new Medicine
+                        {
+                            MedicineId = Convert.ToInt32(reader["MedicineId"]),
+                            Name = reader["Name"].ToString(),
+                            Stock = Convert.ToInt32(reader["Stock"]),
+                            Category = reader["Category"].ToString(),
+                            Supplier = reader["Supplier"].ToString(),
+                            Price = Convert.ToDecimal(reader["Price"]),
+                            Dosage = reader["Dosage"].ToString(),
+                            ExpiryDate = Convert.ToDateTime(reader["ExpiryDate"])
+                        });
+                    }
+                }
+            }
+            return medicines;
+        }
     }
 }
